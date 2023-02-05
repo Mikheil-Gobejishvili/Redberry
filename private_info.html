@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Private info</title>
+</head>
+<body>
+    <main>
+        <section class="private_section">
+            <form action="./index.html">
+                <div id="left_div">
+                    <h1 id="private_header">პირადი ინფო</h1>
+                    <p id="private_paragraph">1/3</p>
+                    <div id="private_line"></div>
+                    <div id="private_ellipse">
+                        <div id="private_less_than"></div>
+                    </div>
+                    <div id="grid_1">
+                        <p id="private_name">სახელი</p>
+                        <input type="text" id="name_input" placeholder="ანზორ" required>
+                        <figcaption id="private_caption">მინიმუმ 2 ასო, ქართული ასოები</figcaption>
+                    </div>
+                    <div id="grid_2">
+                        <p id="private_surname">გვარი</p>
+                        <input type="text" id="surname_input" placeholder="მუმლაძ" required>
+                        <figcaption id="private_caption">მინიმუმ 2 ასო, ქართული ასოები</figcaption>
+                    </div>
+                    <div id="private_photo_upload">
+                        <h1>პირადი ფოტოს ატვირთვა</h1>
+                        <button type="button" id="private_upload_btn">ატვირთვა</button>
+                    </div>
+                    <div id="private_about_me">
+                        <h1>ჩემ შესახებ (არასავალდებულო)</h1>
+                        <textarea name="general_info" id="private_general_info" cols="30" rows="10" placeholder="ზოგადი ინფო შენ შესახებ" required></textarea>
+                    </div>
+                    <div id="private_email">
+                        <h1>ელ.ფოსტა</h1>
+                        <input type="text" id="email_input" placeholder="anzor666@redberry.ge" required>
+                        <figcaption>უნდა მთავრდებოდეს @redberry.ge-ით</figcaption>
+                    </div>
+                    <div id="private_phone_number">
+                        <h1>მობილურის ნომერი</h1>
+                        <input type="text" id="number_input" placeholder="+995 551 12 34 56" required>
+                        <figcaption>უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს</figcaption>
+                    </div>
+                    <div id="private_next_page">
+                        <button type="submit" id="next_page_btn">შემდეგი</button>
+                    </div>
+                </div>
+            </form>
+            <div id="right_div">
+                <div id="right_img"></div>
+                <h1 id="right_img_name">ᲐᲜᲖᲝᲠ</h1>
+                <h1 id="right_img_surname">ᲛᲣᲛᲚᲐᲫ</h1>
+                <div id="email_logo"></div>
+                <p id="right_div_email">anzor666@redberry.com</p>
+                <div id="phone_logo"></div>
+                <p id="phone_number">+995 597 63 45 16</p>
+                <h1 id="right_about_me">ᲩᲔᲛ ᲨᲔᲡᲐᲮᲔᲑ</h1>
+                <p id="about_me_paragraph">ძალიან მიყვარს დიზაინის კეთება. დილით ადრე რომ 
+                    ავდგები გამამხნევებელი ვარჯიშების მაგიერ დიზაინს ვაკეთებ.</p>
+                <div id="round_logo"></div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
