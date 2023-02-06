@@ -9,7 +9,7 @@ body {
     src: url("../fonts/HelveticaNeue.ttc");
   }
 
-#background-img,#logo_2,#logo_1,#right_img,#email_logo,#phone_logo,#private_less_than,#round_logo{
+#background-img,#logo_2,#logo_1,#right_img,#email_logo,#phone_logo,#private_less_than,#round_logo,#warning-sign_3,#warning-sign_4,#warning-sign_1,#warning-sign_2{
     background-position: right;
     background-size: cover;
     background-repeat: no-repeat;
@@ -72,6 +72,7 @@ body {
     background: #1A1A1A;
     border-radius: 8px;
     color: white;
+    cursor: pointer;
 }
 
 .private_section{
@@ -219,7 +220,11 @@ body {
     font-weight: 500;
 }
 
-#private_photo_upload h1 {
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
     position: absolute;
     height: 22px;
     width: 232px;
@@ -228,10 +233,11 @@ body {
     border-radius: 0px;
     margin: 0px;
     font-size: 18px;
+    font-family: "HelveticaNeue";
     line-height: 22px;
-    letter-spacing: 0em;
     font-weight: 500;
-    text-align: left;
+    display: inline-block;
+    cursor: pointer;
 }
 
 #private_upload_btn {
@@ -440,8 +446,6 @@ body {
     left: 501px;
     top: 48px;
     border-radius: 133px;
-    background-color: bisque;
-    background-image: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQwOPuG4K_pmCwSYzPDDeTce119p_0hHg35iSugUSTRqu1maM3_");
 }
 
 #right_div #right_img_name,#right_div #right_img_surname {
@@ -480,13 +484,14 @@ body {
 }
 
 #right_div #email_logo {
+    display: none;
     position: absolute;
     height: 20px;
     width: 20px;
     left: 81px;
     top: 129px;
-    border-radius: 0px;
     background-image: url("../images/Mail.png");
+    background-color: white;
 }
 
 #right_div #right_div_email {
@@ -504,16 +509,8 @@ body {
     text-align: left;
 }
 
-#right_div #email_logo {
-    position: absolute;
-    height: 20px;
-    width: 20px;
-    left: 81px;
-    top: 129px;
-    border-radius: 0px;
-}
-
 #right_div #phone_logo {
+    display: none;
     position: absolute;
     height: 20px;
     width: 20px;
@@ -539,6 +536,7 @@ body {
 }
 
 #right_div #right_about_me {
+    display: none;
     position: absolute;
     height: 22px;
     width: 118px;
@@ -1178,4 +1176,99 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-size: 16px;
     font-weight: 400;
     line-height: 22px;
+}
+
+#validated_img_1,#validated_img_2 {
+    display: none;
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 363px;
+    top: 52px;
+    border-radius: 0px;
+    background-image: url("/images/validated.png");
+}
+
+#validated_img_3, #validated_img_4 {
+    display: none;
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 784px;
+    top: 52px;
+    border-radius: 0px;
+    background-image: url("/images/validated.png");
+}
+
+#warning-sign_1, #warning-sign_2 {
+    position: absolute;
+    display: none;
+    height: 24px;
+    width: 22px;
+    left: 419px;
+    top: 49px;
+    border-radius: 0px;
+    background-size: contain;
+    background-image: url("/images/warning.png");
+}
+
+#warning-sign_1 {
+    left: 415px;
+}
+
+#warning-sign_3, #warning-sign_4 {
+    position: absolute;
+    display: none;
+    background-size: contain;
+    height: 24px;
+    width: 22px;
+    top: 49px;
+    left: 846px;
+    border-radius: 0px;
+    background-image: url("/images/warning.png");
+}
+
+#private_photo_upload_1[type="file"] {
+    display: none;
+}
+
+#upload {
+    width: 69px;
+    height: 17px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    position: absolute;
+    width: 107px;
+    height: 27px;
+    left: 401px;
+    top: 325px;
+    background-color: #0E80BF;
+    border-radius: 4px ;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 0px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+#PersonalPhoto {
+    position: absolute;
+    width: 232px;
+    height: 22px;
+    left: 150px;
+    top: 325px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #1A1A1A;
 }
