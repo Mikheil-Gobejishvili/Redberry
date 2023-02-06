@@ -5,63 +5,81 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="script.js"></script>
     <title>Private info</title>
 </head>
 <body>
     <main>
         <section class="private_section">
-            <form action="./index.html">
                 <div id="left_div">
                     <h1 id="private_header">პირადი ინფო</h1>
                     <p id="private_paragraph">1/3</p>
                     <div id="private_line"></div>
                     <div id="private_ellipse">
-                        <div id="private_less_than"></div>
+                        <a href="index.html"><div id="private_less_than"></div></a>
                     </div>
                     <div id="grid_1">
                         <p id="private_name">სახელი</p>
-                        <input type="text" id="name_input" placeholder="ანზორ" required>
+                        <input type="text" id="name_input" onchange="name_input()" placeholder="ანზორ">
+                        <div id="validated_img_1"></div>
+                        <div id="warning-sign_1"></div>
                         <figcaption id="private_caption">მინიმუმ 2 ასო, ქართული ასოები</figcaption>
                     </div>
                     <div id="grid_2">
                         <p id="private_surname">გვარი</p>
-                        <input type="text" id="surname_input" placeholder="მუმლაძ" required>
+                        <input type="text" id="surname_input" placeholder="მუმლაძ" onchange="surname()">
+                        <div id="validated_img_2"></div>
+                        <div id="warning-sign_2"></div>
                         <figcaption id="private_caption">მინიმუმ 2 ასო, ქართული ასოები</figcaption>
                     </div>
                     <div id="private_photo_upload">
-                        <h1>პირადი ფოტოს ატვირთვა</h1>
-                        <button type="button" id="private_upload_btn">ატვირთვა</button>
+                            <!-- <label for="private_upload" class="custom-file-upload">
+                                პირადი ფოტოს ატვირთვა
+                            </label>
+                            <input type="file" onchange="pictureUpload(event)" accept="image/*" id="private_upload" name="filename">
+                            <button type="button" id="private_upload_btn">ატვირთვა</button> -->
+                            <span id="PersonalPhoto" class="PersonalPhoto">პირადი ფოტოს ატვირთვა</span>
+                            <label for="private_photo_upload_1" id="upload">ატვირთვა</label>
+                            <input id="private_photo_upload_1" onchange="pictureUpload(event)" accept="image/*" type="file" >
                     </div>
+                    <script>
+                        var pictureUpload = function(event) {
+                            const right_img = document.getElementById("right_img");
+                            right_img.style.backgroundImage = "url("+URL.createObjectURL(event.target.files[0])+")"
+                        }
+                    </script>
                     <div id="private_about_me">
                         <h1>ჩემ შესახებ (არასავალდებულო)</h1>
-                        <textarea name="general_info" id="private_general_info" cols="30" rows="10" placeholder="ზოგადი ინფო შენ შესახებ" required></textarea>
+                        <textarea name="general_info" id="private_general_info" onchange="about_me()" cols="30" rows="10" placeholder="ზოგადი ინფო შენ შესახებ" required></textarea>
                     </div>
                     <div id="private_email">
                         <h1>ელ.ფოსტა</h1>
-                        <input type="text" id="email_input" placeholder="anzor666@redberry.ge" required>
+                        <input type="text" id="email_input" onchange="email()" placeholder="anzor666@redberry.ge">
+                        <div id="validated_img_3"></div>
+                        <div id="warning-sign_3"></div>
                         <figcaption>უნდა მთავრდებოდეს @redberry.ge-ით</figcaption>
                     </div>
                     <div id="private_phone_number">
                         <h1>მობილურის ნომერი</h1>
-                        <input type="text" id="number_input" placeholder="+995 551 12 34 56" required>
+                        <input type="text" id="number_input" onchange="number()" placeholder="+995 551 12 34 56">
+                        <div id="validated_img_4"></div>
+                        <div id="warning-sign_4"></div>
                         <figcaption>უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს</figcaption>
                     </div>
                     <div id="private_next_page">
-                        <button type="submit" id="next_page_btn">შემდეგი</button>
+                        <button onclick="validate()" id="next_page_btn">შემდეგი</button>
                     </div>
                 </div>
-            </form>
             <div id="right_div">
                 <div id="right_img"></div>
-                <h1 id="right_img_name">ᲐᲜᲖᲝᲠ</h1>
-                <h1 id="right_img_surname">ᲛᲣᲛᲚᲐᲫ</h1>
+                <h1 id="right_img_name"></h1>
+                <h1 id="right_img_surname"></h1>
                 <div id="email_logo"></div>
-                <p id="right_div_email">anzor666@redberry.com</p>
+                <p id="right_div_email"></p>
                 <div id="phone_logo"></div>
-                <p id="phone_number">+995 597 63 45 16</p>
+                <p id="phone_number"></p>
                 <h1 id="right_about_me">ᲩᲔᲛ ᲨᲔᲡᲐᲮᲔᲑ</h1>
-                <p id="about_me_paragraph">ძალიან მიყვარს დიზაინის კეთება. დილით ადრე რომ 
-                    ავდგები გამამხნევებელი ვარჯიშების მაგიერ დიზაინს ვაკეთებ.</p>
+                <p id="about_me_paragraph"></p>
                 <div id="round_logo"></div>
             </div>
         </section>
