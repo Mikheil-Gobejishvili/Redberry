@@ -9,7 +9,8 @@ body {
     src: url("../fonts/HelveticaNeue.ttc");
   }
 
-#background-img,#logo_2,#logo_1,#right_img,#email_logo,#phone_logo,#private_less_than,#round_logo,#warning-sign_3,#warning-sign_4,#warning-sign_1,#warning-sign_2{
+#background-img,#logo_2,#logo_1,#right_img,#email_logo,#phone_logo,#private_less_than,#round_logo,
+#warning-sign_3,#warning-sign_4,#warning-sign_1,#warning-sign_2,#warning-sign_5,#warning-sign_6,#warning-sign_7, #warning-sign_8, .warning-sign{
     background-position: right;
     background-size: cover;
     background-repeat: no-repeat;
@@ -422,17 +423,14 @@ input[type="file"] {
     line-height: 20px;
     letter-spacing: 0.08em;
     color: white;
+    cursor: pointer;
     border: 0px;
-}
-
-#left_div {
-    background-color: #f9f9f9;
-    height: 1080px;
-    width: 1098px;
 }
 
 #right_div {
     position: absolute;
+    background-color: white;
+    width: 801px;
     height: 1080px;
     left: 1098px;
     top: 0px;
@@ -441,6 +439,7 @@ input[type="file"] {
 
 #right_div #right_img {
     position: absolute;
+    object-fit: cover;
     height: 246px;
     width: 246px;
     left: 501px;
@@ -573,10 +572,6 @@ input[type="file"] {
     background-image: url("../images/Round_logo.png");
 }
 
-#experience_section {
-    height: 1080px;
-}
-
 #experience_position {
     position: absolute;
     height: 125px;
@@ -592,7 +587,6 @@ input[type="file"] {
     margin: 0px;
     height: 21px;
     width: 798px;
-    left: 24px;
     top: 8px;
     border-radius: 0px;
     font-size: 16px;
@@ -600,11 +594,23 @@ input[type="file"] {
     line-height: 21px;
 }
 
-#experience_position #position_input, #experience_employer #employer_input {
+#position_header {
     position: absolute;
+    margin: 0px;
+    height: 21px;
+    width: 798px;
+    top: 8px;
+    border-radius: 0px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+}
+
+#experience_position #position_input, #experience_employer #employer_input,#experience_employer .employer_input {
+    position: absolute;
+    z-index: 2;
     height: 48px;
     width: 780px;
-    left: 24px;
     top: 37px;
     border-radius: 4px;
     border: 1px solid #BCBCBC;
@@ -615,11 +621,24 @@ input[type="file"] {
     outline: none;
 }
 
-#experience_position #position_caption {
+#position_input, .position_input{
+    position: absolute;
+    height: 48px;
+    width: 780px;
+    top: 37px;
+    border-radius: 4px;
+    border: 1px solid #BCBCBC;
+    padding-left: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+    outline: none;
+}
+
+#position_caption {
     position: absolute;
     height: 21px;
     width: 798px;
-    left: 24px;
     top: 93px;
     border-radius: 0px;
     font-size: 14px;
@@ -637,12 +656,11 @@ input[type="file"] {
     padding: 8px 24px 8px 24px;
 }
 
-#experience_employer #employer_header {
+#employer_header {
     position: absolute;
     margin: 0px;
     height: 21px;
     width: 798px;
-    left: 24px;
     top: 8px;
     border-radius: 0px;
     font-size: 16px;
@@ -654,7 +672,6 @@ input[type="file"] {
     position: absolute;
     height: 21px;
     width: 798px;
-    left: 24px;
     top: 93px;
     border-radius: 0px;
     font-size: 14px;
@@ -662,17 +679,16 @@ input[type="file"] {
     line-height: 21px;
 }
 
-#experience_date #beginning_date {
+#beginning_date, .beginning_date {
     position: absolute;
     height: 125px;
     width: 419px;
     left: 126px;
     top: 431px;
     border-radius: 0px;
-    padding: 8px 24px 8px 24px;
 }
 
-#experience_date #beginning_date h1,#experience_date #end_date h1 {
+#beginning_date h1,#end_date h1, .beginning_date h1, .end_date h1 {
     position: absolute;
     margin: 0px;
     height: 21px;
@@ -685,8 +701,10 @@ input[type="file"] {
     line-height: 21px;
 }
 
-#experience_date #beginning_date #beginning_input, #experience_date #end_date #beginning_input,#education_end_date #beginning_input {
+#beginning_date #beginning_input,#beginning_date .beginning_input, #end_date #end_input,#end_date .end_input,
+ .end_date #end_input, .end_date .end_input , #education_end_date #beginning_input, .beginning_date #beginning_input, .beginning_date .beginning_input{
     position: absolute;
+    z-index: 2;
     height: 48px;
     width: 355px;
     left: 24px;
@@ -707,14 +725,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     height: 20px;
 }
 
-#experience_date #end_date {
+#end_date, .end_date {
     position: absolute;
     height: 93px;
     width: 419px;
     left: 553px;
     top: 431px;
     border-radius: 0px;
-    padding: 8px 24px 8px 24px;
 }
 
 #experience_description {
@@ -724,7 +741,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     left: 126px;
     top: 541px;
     border-radius: 0px;
-    padding: 8px 24px 8px 24px;
 }
 
 
@@ -741,8 +757,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin: 0px;
 }
 
-#experience_description #description_textArea {
+#experience_description #description_textArea, #experience_description .description_textArea {
     position: absolute;
+    z-index: 2;
     height: 123px;
     width: 780px;
     left: 24px;
@@ -829,12 +846,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     border: 1px solid #C8C8C8;
 }
 
-#right_div #right_experience_title,#right_div #right_experience_header, #right_div #right_experience_header_2,#right_div #right_paragraph,#right_div #right_paragraph_2 {
+#right_div #right_experience_title,#right_div #right_experience_header, #right_div #right_experience_header_2,#right_div #right_paragraph,#right_div #right_paragraph_2,#right_div #right_paragraph_3 {
     margin: 0px;
 } 
 
 #right_div #right_experience_title {
     position: absolute;
+    display: none;
     height: 22px;
     width: 143px;
     left: 80px;
@@ -852,30 +870,21 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-size: 16px;
     font-weight: 500;
     line-height: 20px;
-    top: 402px;
 }
 
 #right_div #right_experience_header {
-    position: absolute;
+    display: none;
     height: 20px;
-    width: 178px;
-    left: 80px;
+    width: min-content;
 }
 
 #right_div #right_experience_header_2 {
-    position: absolute;
     height: 20px;
     width: 70px;
-    left: 255px;
 }
 
-#right_div #right_paragraph {
-    position: absolute;
-    height: 19px;
-    width: 183px;
-    left: 80px;
-    top: 429px;
-    border-radius: 0px;
+#right_div #right_paragraph,#right_div #right_paragraph_3 {
+    display: none;
     opacity: 0.5;
 }
 
@@ -1189,8 +1198,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background-image: url("/images/validated.png");
 }
 
-#validated_img_3, #validated_img_4 {
+#validated_img_3, #validated_img_4, #validated_img_5, #validated_img_6 {
     display: none;
+    z-index: 3;
     position: absolute;
     height: 18px;
     width: 18px;
@@ -1216,7 +1226,19 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     left: 415px;
 }
 
-#warning-sign_3, #warning-sign_4 {
+#warning-sign_3, #warning-sign_4,#warning-sign_5,#warning-sign_6, #warning-sign_8{
+    position: absolute;
+    display: none;
+    background-size: contain;
+    height: 24px;
+    width: 22px;
+    top: 49px;
+    left: 846px;
+    border-radius: 0px;
+    background-image: url("/images/warning.png");
+}
+
+.warning-sign {
     position: absolute;
     display: none;
     background-size: contain;
@@ -1271,4 +1293,26 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-size: 18px;
     line-height: 22px;
     color: #1A1A1A;
+}
+
+#inline-div {
+    position: absolute;
+    width: 662px;
+    height: 20px;
+    top: 402px;
+    left: 80px;
+}
+
+#inline-div_2 {
+    position: absolute;
+    height: 19px;
+    width: 183px;
+    left: 80px;
+    top: 429px;
+}
+
+#right_experience_header, #right_experience_header_2 {
+    display: inline-block;
+    /* margin-top: 402px;
+    margin-left: 80px; */
 }
