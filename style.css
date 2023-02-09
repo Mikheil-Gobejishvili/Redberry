@@ -1,0 +1,1318 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: "HelveticaNeue";
+}
+
+@font-face {
+    font-family: "HelveticaNeue";
+    src: url("../fonts/HelveticaNeue.ttc");
+  }
+
+#background-img,#logo_2,#logo_1,#right_img,#email_logo,#phone_logo,#private_less_than,#round_logo,
+#warning-sign_3,#warning-sign_4,#warning-sign_1,#warning-sign_2,#warning-sign_5,#warning-sign_6,#warning-sign_7, #warning-sign_8, .warning-sign{
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#background-img {
+    height: 1080px;
+    left: 0px;
+    top: 0px;
+    border-radius: 0px;
+    opacity: 0.7;
+    background-image: url("https://s3-alpha-sig.figma.com/img/4723/658c/209d61441c74130509ed3fe5ff87a120?Expires=1676246400&Signature=fQbDjx7TriScG-1V5vbQGZW8aJKiQs4G51VD74-WEU3jmW-ZmofGdDTgCS7KrvutZg6pGKgrUUwAQ0534FBSFOMvDrFQZyZG9H-lLSYb1BNsA9Zs6zP0nmeLWEM0pmhTXCEIsRPlmaRZasnre7nlVFq922KAexQ0J3t-~GgpVllBJaHPS9YmpG1V~Zr9tXFSwC3fcBSWmTn0BVZdcokVBOFLMj01oiDELkNSA0O-MgDTn6QOQ01kBCwEr~RcrTVFu1YzY7XGYm1zqxnM2XhptHv083LbaEMi~FRa4gJ7Pd7JxZ3i-5BjtfGOg-mvCOLZC~uxQynuFFuLxSzjLkCZOA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4");
+}
+
+#logo_2 {
+    position: absolute;
+    height: 299px;
+    width: 299px;
+    left: 1076px;
+    top: 473px;
+    border-radius: 0px;
+    opacity: 0.5;
+    background-image: url("https://s3-alpha-sig.figma.com/img/0cc8/7eab/6fc4462615313b68eb514c38f7da240c?Expires=1676246400&Signature=BNIlgG5A4LTetGeXJgRiOhiPSXqVEsvmEA-FvuHpbM375Bsf8nZQnD-v22JZbAsydNTEqMenRnuSAug183B5pVT8efZeU0b6Qi4AQP5pxn9oIXHwNjPpwS6aXtDtN-2J5uOQcnwawkGaAHhxSICB8CYpw399Nl-aki~mS5mh50sHkfNtsfELrYBFmdzLR4q5pOWCU7X92b250fnSvQ4MBM6w6flC38iqlZRLWfGDJebQcSg7JfFl5zdT6M-aaOP2yUOZggIuOoLABLbC5c4gD7Ghs0bfokNV-9GsX6EC3LpZ3X~an-TSCLaqWZAe2AWLK2P6jCN7XP0mxR1SQ0dPhQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4");
+}
+
+#logo_1 {
+    position: absolute;
+    height: 38px;
+    width: 236px;
+    left: 70px;
+    top: 25px;
+    border-radius: 0px;
+    color: #f93b1d;
+    background-image: url("https://s3-alpha-sig.figma.com/img/f69b/80be/31a111bebc15f4f9df757da172ce198d?Expires=1676246400&Signature=H2aNvja~CBgyyDvZSqkGd6LSZNWeKt57eVnSG~CpchYk3fM1LXCHLyxnv47Y99FWanjSL7UdXRFowtqON5xBF~n1IsVDuPvQd2WfMQEKeZ5hMCyrvqeMMQcsuo3dpbW-VYjGBz46ZpwKh0UZygYyoh3WM1tRuR4JgBCzqKjWgPMUV~cRwhAg75KOuyENzpRDPnR9JcsGdxU7eCan1sREIYw~b5Cb38p1LFmMZhqRaNHgA7OZtEfPxULCAYqkAEAMB~pcTEBMCu-cYiCNIgtY5BmQ3h1LXKV~sU3oSb~mg8uk5TyDBHmpNXrtFOIJZjzHd94ntWLi-mLQBrHiR8T0KA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4");
+}
+
+#line {
+    position: absolute;
+    height: 0px;
+    width: 1780px;
+    left: 70px;
+    top: 89px;
+    border-radius: 0px;
+    border: 1px solid #1A1A1A;
+    background: #1A1A1A;
+}
+
+#resume_btn_div {
+    text-align: center;
+}
+
+#resume_btn {
+    position: absolute;
+    height: 60px;
+    width: 464px;
+    left: 728px;
+    top: 513px;
+    font-size: 20px;
+    font-weight: 500;
+    background: #1A1A1A;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+.private_section{
+    height: 1080px;
+}
+
+#private_header {
+    position: absolute;
+    height: 29px;
+    width: 179px;
+    left: 149px;
+    top: 47px;
+    border-radius: 0px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 0px;
+}
+
+#private_paragraph {
+    position: absolute;
+    height: 24px;
+    width: 29px;
+    left: 920px;
+    top: 49px;
+    border-radius: 0px;
+    margin: 0px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: right;
+}
+
+#private_line {
+    position: absolute;
+    height: 0px;
+    width: 798.000000000003px;
+    left: 150px;
+    top: 88px;
+    border-radius: 0px;
+    border: 1px solid #1A1A1A;
+    border-bottom: 0px;
+}
+
+#private_ellipse {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    left: 48px;
+    top: 45px;
+    border-radius: 50%;
+}
+
+#private_less_than {
+    height: 16px;
+    width: 9.20987606048584px;
+    left: 62px;
+    top: 57px;
+    border-radius: 0px;
+    background-image: url("../images/Less_than.png");
+}
+
+.fa-solid {
+    height: 16px;
+    width: 9.20987606048584px;
+    left: 62px;
+    top: 57px;
+    border-radius: 0px;
+
+}
+
+#grid_1 {
+    position: absolute;
+    height: 122px;
+    width: 419px;
+    left: 126px;
+    top: 157px;
+    border-radius: 0px;
+    padding: 8px 24px 8px 24px;
+}
+
+#grid_2 {
+    position: absolute;
+    height: 122px;
+    width: 419px;
+    left: 553px;
+    top: 157px;
+    border-radius: 0px;
+    padding: 8px 24px 8px 24px; 
+}
+
+#private_name {
+    position: absolute;
+    height: 21px;
+    width: 371px;
+    left: 24px;
+    top: 8px;
+    border-radius: 0px;
+    margin: 0px;
+    font-weight: 500;
+}
+
+#name_input, #surname_input {
+    position: absolute;
+    height: 48px;
+    width: 355px;
+    left: 24px;
+    top: 37px;
+    border-radius: 4px;
+    border: 1px solid #BCBCBC;
+    padding-left: 16px;
+    font-size: 16px;
+    outline: none;
+}
+
+#private_caption {
+    position: absolute;
+    height: 21px;
+    width: 371px;
+    left: 24px;
+    top: 93px;
+    border-radius: 0px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+#private_surname {
+    position: absolute;
+    height: 21px;
+    width: 371px;
+    left: 24px;
+    top: 8px;
+    border-radius: 0px;
+    font-size: 16px;
+    margin: 0px;
+    font-weight: 500;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    position: absolute;
+    height: 22px;
+    width: 232px;
+    left: 150px;
+    top: 325px;
+    border-radius: 0px;
+    margin: 0px;
+    font-size: 18px;
+    font-family: "HelveticaNeue";
+    line-height: 22px;
+    font-weight: 500;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#private_upload_btn {
+    position: absolute;
+    font-family: 'HelveticaNeue';
+    height: 27px;
+    width: 107px;
+    left: 401px;
+    top: 325px;
+    border-radius: 4px;
+    background: #0E80BF;
+    border: 0px;
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em;
+}
+
+#private_about_me {
+    position: absolute;
+    height: 148px;
+    width: 846px;
+    left: 126px;
+    top: 393px;
+    border-radius: 0px;
+    padding: 8px 24px 8px 24px;
+
+}
+
+#private_about_me h1 {
+    position: absolute;
+    height: 21px;
+    width: 798px;
+    left: 24px;
+    top: 8px;
+    border-radius: 0px;
+    margin: 0px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+#private_general_info {
+    position: absolute;
+    height: 103px;
+    width: 782px;
+    left: 24px;
+    top: 37px;
+    border-radius: 4px;
+    border: 1px solid #BCBCBC;
+    padding-top: 13px;
+    padding-left: 16px;
+    resize: none;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+;
+}
+
+#private_email {
+    position: absolute;
+    height: 122px;
+    width: 846px;
+    left: 126px;
+    top: 558px;
+    border-radius: 0px;
+    padding: 8px 24px 8px 24px;
+}
+
+#private_email h1 {
+    position: absolute;
+    margin: 0px;
+    height: 21px;
+    width: 798px;
+    left: 24px;
+    top: 8px;
+    border-radius: 0px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+#private_email figcaption {
+    position: absolute;
+    height: 21px;
+    width: 798px;
+    left: 24px;
+    top: 93px;
+    border-radius: 0px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+#private_phone_number {
+    position: absolute;
+    height: 122px;
+    width: 846px;
+    left: 126px;
+    top: 693px;
+    border-radius: 0px;
+    padding: 8px 24px 8px 24px;
+}
+
+#private_phone_number h1 {
+    position: absolute;
+    height: 21px;
+    width: 798px;
+    left: 24px;
+    top: 8px;
+    border-radius: 0px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 0px;
+}
+
+#private_phone_number input, #private_email input {
+    position: absolute;
+    height: 48px;
+    width: 782px;
+    left: 24px;
+    top: 37px;
+    border-radius: 4px;
+    border: 1px solid #BCBCBC;
+    padding-left: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    outline: none;
+}
+
+#private_phone_number figcaption {
+    position: absolute;
+    height: 21px;
+    width: 798px;
+    left: 24px;
+    top: 93px;
+    border-radius: 0px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+#name_input, #surname_input, #email_input, #number_input, #private_general_info {
+    outline: none;
+    opacity: 0.6;
+}
+
+#name_input:hover, #surname_input:hover, #email_input:hover, #number_input:hover, #private_general_info:hover {
+    opacity: 1;
+    border: 2px solid #BCBCBC;
+    transition: 5ms;
+}
+
+#next_page_btn {
+    position: absolute;
+    font-family: 'HelveticaNeue';
+    height: 48px;
+    width: 151px;
+    left: 797px;
+    top: 967px;
+    border-radius: 4px;
+    background: #6B40E3;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.08em;
+    color: white;
+    cursor: pointer;
+    border: 0px;
+}
+
+#right_div {
+    position: absolute;
+    background-color: white;
+    width: 801px;
+    height: 1080px;
+    left: 1098px;
+    top: 0px;
+    border-radius: 0px;
+}
+
+#right_div #right_img {
+    position: absolute;
+    object-fit: cover;
+    height: 246px;
+    width: 246px;
+    left: 501px;
+    top: 48px;
+    border-radius: 133px;
+}
+
+#right_div #right_img_name,#right_div #right_img_surname {
+    margin: 0px;
+}
+
+#right_div #right_img_name {
+    position: absolute;
+    height: 42px;
+    width: 123px;
+    left: 80px;
+    top: 68px;
+    border-radius: 0px;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 42px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #F93B1D;
+
+}
+
+#right_div #right_img_surname {
+    position: absolute;
+    height: 42px;
+    width: 145px;
+    left: 223px;
+    top: 68px;
+    border-radius: 0px;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 42px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #F93B1D;
+}
+
+#right_div #email_logo {
+    display: none;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 81px;
+    top: 129px;
+    background-image: url("../images/Mail.png");
+    background-color: white;
+}
+
+#right_div #right_div_email {
+    position: absolute;
+    height: 21px;
+    width: 179px;
+    left: 111px;
+    top: 127px;
+    border-radius:0px;
+    margin: 0px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+#right_div #phone_logo {
+    display: none;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 81px;
+    top: 159px;
+    border-radius: 0px;
+    background-image: url("../images/Phone.png");
+}
+
+#right_div #phone_number {
+    position: absolute;
+    height: 21px;
+    width: 151px;
+    left: 111px;
+    top: 158px;
+    border-radius: 0px;
+    margin: 0px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+#right_div #right_about_me {
+    display: none;
+    position: absolute;
+    height: 22px;
+    width: 118px;
+    left: 80px;
+    top: 213px;
+    border-radius: 0px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    color: #F93B1D;
+    margin: 0px;
+}
+
+#right_div #about_me_paragraph {
+    position: absolute;
+    height: 72px;
+    width: 432px;
+    left: 80px;
+    top: 250px;
+    border-radius: 0px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    margin: 0px;
+}
+
+#right_div #round_logo {
+    position: absolute;
+    height: 42px;
+    width: 42px;
+    left: 78px;
+    top: 994px;
+    border-radius: 0px;
+    background-image: url("../images/Round_logo.png");
+}
+
+#experience_position {
+    position: absolute;
+    height: 125px;
+    width: 846px;
+    left: 126px;
+    top: 157px;
+    border-radius: 0px;
+    padding: 8px 24px 8px 24px;
+}
+
+#experience_position #position_header {
+    position: absolute;
+    margin: 0px;
+    height: 21px;
+    width: 798px;
+    top: 8px;
+    border-radius: 0px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+}
+
+#position_header {
+    position: absolute;
+    margin: 0px;
+    height: 21px;
+    width: 798px;
+    top: 8px;
+    border-radius: 0px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+}
+
+#experience_position #position_input, #experience_employer #employer_input,#experience_employer .employer_input {
+    position: absolute;
+    z-index: 2;
+    height: 48px;
+    width: 780px;
+    top: 37px;
+    border-radius: 4px;
+    border: 1px solid #BCBCBC;
+    padding-left: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+    outline: none;
+}
+
+#position_input, .position_input{
+    position: absolute;
+    height: 48px;
+    width: 780px;
+    top: 37px;
+    border-radius: 4px;
+    border: 1px solid #BCBCBC;
+    padding-left: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+    outline: none;
+}
+
+#position_caption {
+    position: absolute;
+    height: 21px;
+    width: 798px;
+    top: 93px;
+    border-radius: 0px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 21px;
+}
+
+#experience_employer {
+    position: absolute;
+    height: 125px;
+    width: 846px;
+    left: 126px;
+    top: 294px;
+    border-radius: 0px;
+    padding: 8px 24px 8px 24px;
+}
+
+#employer_header {
+    position: absolute;
+    margin: 0px;
+    height: 21px;
+    width: 798px;
+    top: 8px;
+    border-radius: 0px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+}
+
+#experience_employer #employer_caption {
+    position: absolute;
+    height: 21px;
+    width: 798px;
+    top: 93px;
+    border-radius: 0px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 21px;
+}
+
+#beginning_date, .beginning_date {
+    position: absolute;
+    height: 125px;
+    width: 419px;
+    left: 126px;
+    top: 431px;
+    border-radius: 0px;
+}
+
+#beginning_date h1,#end_date h1, .beginning_date h1, .end_date h1 {
+    position: absolute;
+    margin: 0px;
+    height: 21px;
+    width: 371px;
+    left: 24px;
+    top: 8px;
+    border-radius: 0px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+}
+
+#beginning_date #beginning_input,#beginning_date .beginning_input, #end_date #end_input,#end_date .end_input,
+ .end_date #end_input, .end_date .end_input , #education_end_date #beginning_input, .beginning_date #beginning_input, .beginning_date .beginning_input{
+    position: absolute;
+    z-index: 2;
+    height: 48px;
+    width: 355px;
+    left: 24px;
+    top: 37px;
+    border-radius: 4px;
+    border: 1px solid #BCBCBC;
+    padding-left: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+    outline: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    padding-right: 14px;
+    background-image: url("../images/calendar_icon.png");
+    width: 18px;
+    height: 20px;
+}
+
+#end_date, .end_date {
+    position: absolute;
+    height: 93px;
+    width: 419px;
+    left: 553px;
+    top: 431px;
+    border-radius: 0px;
+}
+
+#experience_description {
+    position:absolute;
+    height: 168px;
+    width: 846px;
+    left: 126px;
+    top: 541px;
+    border-radius: 0px;
+}
+
+
+#experience_description #description_header {
+    position: absolute;
+    height: 21px;
+    width: 798px;
+    left: 24px;
+    top: 8px;
+    border-radius: 0px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+    margin: 0px;
+}
+
+#experience_description #description_textArea, #experience_description .description_textArea {
+    position: absolute;
+    z-index: 2;
+    height: 123px;
+    width: 780px;
+    left: 24px;
+    top: 37px;
+    border-radius: 4px;
+    resize: none;
+    border: 1px solid #BCBCBC;
+    padding-left: 16px;
+    padding-top: 13px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+}
+
+#bottom_line {
+    position: absolute;
+    height: 0px;
+    width: 798px;
+    left: 149px;
+    top: 759px;
+    border-radius: 0px;
+    border: 1px solid #C1C1C1;
+    border-bottom: 0px;
+}
+
+#add_experience #add_experience_btn {
+    position: absolute;
+    font-family: 'HelveticaNeue';
+    height: 48px;
+    width: 289px;
+    left: 149px;
+    top: 804px;
+    border-radius: 4px;
+    border: 0px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    background: #62A1EB;
+    color: white;
+}
+
+#background-img1 {
+    width: 1920px;
+    height: 1080px;
+    background-color: white;
+}
+
+#go_back #go_back_btn {
+    position: absolute;
+    font-family: 'HelveticaNeue';
+    height: 48px;
+    width: 113px;
+    left: 150px;
+    top: 967px;
+    border-radius: 4px;
+    border: 0px;
+    background: #6B40E3;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+#experience_header {
+    position: absolute;
+    margin: 0px;
+    height: 29px;
+    width: 190px;
+    left: 149px;
+    top: 47px;
+    border-radius: 0px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+}
+
+#right_div #right_line {
+    position: absolute;
+    height: 0px;
+    width: 662.0000000000025px;
+    left: 80px;
+    top: 341px;
+    border-radius: 0px;
+    border: 1px solid #C8C8C8;
+}
+
+#right_div #right_experience_title,#right_div #right_experience_header, #right_div #right_experience_header_2,#right_div #right_paragraph,#right_div #right_paragraph_2,#right_div #right_paragraph_3 {
+    margin: 0px;
+} 
+
+#right_div #right_experience_title {
+    position: absolute;
+    display: none;
+    height: 22px;
+    width: 143px;
+    left: 80px;
+    top: 365px;
+    border-radius: 0px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    color: #F93B1D;
+
+}
+
+#right_div #right_experience_header, #right_div #right_experience_header_2 {
+    border-radius: 0px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+#right_div #right_experience_header {
+    display: none;
+    height: 20px;
+    width: min-content;
+}
+
+#right_div #right_experience_header_2 {
+    height: 20px;
+    width: 70px;
+}
+
+#right_div #right_paragraph,#right_div #right_paragraph_3 {
+    display: none;
+    opacity: 0.5;
+}
+
+#right_div #right_paragraph_2 {
+    position: absolute;
+    height: 66px;
+    width: 662px;
+    left: 80px;
+    top: 464px;
+    border-radius: 0px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+#academy {
+    position: absolute;
+    height: 125px;
+    width: 846px;
+    left: 126px;
+    top: 157px;
+    border-radius: 0px;
+    padding: 8px 24px 8px 24px;
+
+}
+
+#academy #education_left_paragraph {
+    position: absolute;
+    height: 21px;
+    width: 798px;
+    left: 24px;
+    top: 8px;
+    border-radius: 0px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+    margin: 0px;
+}
+
+#academy #academy_name {
+    position: absolute;
+    height: 48px;
+    width: 782px;
+    left: 24px;
+    top: 37px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+    padding-left: 16px;
+    border: 1px solid #BCBCBC;
+}
+
+#education_caption {
+    position: absolute;
+    height: 21px;
+    width: 798px;
+    left: 24px;
+    top: 93px;
+    border-radius: 0px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 21px;
+}
+
+#degree {
+    position: absolute;
+    height: 125px;
+    width: 419px;
+    left: 126px;
+    top: 294px;
+    border-radius: 0px;
+    padding: 8px 24px 8px 24px;
+}
+
+#degree #degree_header {
+    position: absolute;
+    height: 21px;
+    width: 371px;
+    left: 24px;
+    top: 8px;
+    border-radius: 0px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+    margin: 0px;
+}
+
+#degree select {
+    position: absolute;
+    height: 48px;
+    width: 371px;
+    left: 24px;
+    top: 37px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+    padding-left: 16px;
+    border: 1px solid #BCBCBC;
+    opacity: 0.7;
+}
+
+#education_end_date {
+    position: absolute;
+    height: 93px;
+    width: 419px;
+    left: 553px;
+    top: 294px;
+    border-radius: 0px;
+}
+
+#education_description {
+    position: absolute;
+    height: 224px;
+    width: 846px;
+    left: 126px;
+    top: 405px;
+    border-radius: 0px;
+}
+
+#education_description h1 {
+    position: absolute;
+    height: 21px;
+    width: 798px;
+    left: 24px;
+    top: 8px;
+    border-radius: 0px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+    margin: 0px;
+}
+
+#education_textArea {
+    position: absolute;
+    height: 179px;
+    width: 780px;
+    left: 24px;
+    top: 37px;
+    border-radius: 4px;
+    border: 1px solid #BCBCBC;
+    resize: none;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+    padding-left: 16px;
+    padding-top: 13px;
+}
+
+#bottom_line_1 {
+    position: absolute;
+    height: 0px;
+    width: 798px;
+    left: 150px;
+    top: 674px;
+    border-radius: 0px;
+    border: 1px solid #C1C1C1;
+    border-bottom: 0px;
+}
+
+#education_add_more #add_more_btn {
+    position: absolute;
+    background: #62A1EB;
+    border: 0px;
+    color: white;
+    font-family: 'HelveticaNeue';
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    height: 48px;
+    width: 289px;
+    left: 150px;
+    top: 719px;
+    border-radius: 4px;
+}
+
+#education_go_back #goes_back {
+    position: absolute;
+    height: 48px;
+    width: 113px;
+    left: 149px;
+    top: 967px;
+    border-radius: 4px;
+    border: 0px;
+    background: #6B40E3;
+    color: white;
+    font-family: 'HelveticaNeue';
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+#education_next_btn #after_btn {
+    position: absolute;
+    height: 48px;
+    width: 151px;
+    left: 797px;
+    top: 967px;
+    border-radius: 4px;
+    border: 0px;
+    background: #6B40E3;
+    color: white;
+    font-family: 'HelveticaNeue';
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.08em;
+}
+
+.resume-section {
+    height: 1263px;
+}
+
+#resume-div {
+    position: absolute;
+    height: 1080px;
+    width: 822px;
+    left: 549px;
+    top: 54px;
+    border-radius: 0px;
+    border: 0.8px solid #000000;
+}
+
+#right_line_2 {
+    position: absolute;
+    height: 0px;
+    width: 662.0000000000025px;
+    left: 80px;
+    top: 562px;
+    border-radius: 0px;
+    border: 1px solid #C8C8C8;
+}
+
+#resume-div #right_div {
+    left: 0px;
+}
+
+#right_div #right-education {
+    position: absolute;
+    height: 22px;
+    width: 115px;
+    left: 80px;
+    top: 588px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    color: #F93B1D;
+    margin: 0px;
+}
+
+#right_div #education_header, #right_div #education_header_2{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    height: 20px;
+    top: 625px;
+    border-radius: 0px;
+}
+
+#right_div #education_header {
+    position: absolute;
+    width: 349px;
+    left: 80px;
+}
+
+#right_div #education_right_paragraph, #right_div #education_header_2, #right_div #education_header,#right_div #education_about_me  {
+    margin: 0px;
+}
+
+#right_div #education_header_2 {
+    position: absolute;
+    width: 81px;
+    left: 425px;
+}
+
+#right_div #education_right_paragraph {
+    position: absolute;
+    height: 19px;
+    width: 84px;
+    left: 80px;
+    top: 652px;
+    border-radius: 0px;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 19px;
+    opacity: 0.5;
+}
+
+#right_div #education_about_me {
+    position: absolute;
+    height: 88px;
+    width: 662px;
+    left: 80px;
+    top: 687px;
+    border-radius: 0px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+#validated_img_1,#validated_img_2 {
+    display: none;
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 363px;
+    top: 52px;
+    border-radius: 0px;
+    background-image: url("/images/validated.png");
+}
+
+#validated_img_3, #validated_img_4, #validated_img_5, #validated_img_6 {
+    display: none;
+    z-index: 3;
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 784px;
+    top: 52px;
+    border-radius: 0px;
+    background-image: url("/images/validated.png");
+}
+
+#warning-sign_1, #warning-sign_2 {
+    position: absolute;
+    display: none;
+    height: 24px;
+    width: 22px;
+    left: 419px;
+    top: 49px;
+    border-radius: 0px;
+    background-size: contain;
+    background-image: url("/images/warning.png");
+}
+
+#warning-sign_1 {
+    left: 415px;
+}
+
+#warning-sign_3, #warning-sign_4,#warning-sign_5,#warning-sign_6, #warning-sign_8{
+    position: absolute;
+    display: none;
+    background-size: contain;
+    height: 24px;
+    width: 22px;
+    top: 49px;
+    left: 846px;
+    border-radius: 0px;
+    background-image: url("/images/warning.png");
+}
+
+.warning-sign {
+    position: absolute;
+    display: none;
+    background-size: contain;
+    height: 24px;
+    width: 22px;
+    top: 49px;
+    left: 846px;
+    border-radius: 0px;
+    background-image: url("/images/warning.png");
+}
+
+#private_photo_upload_1[type="file"] {
+    display: none;
+}
+
+#upload {
+    width: 69px;
+    height: 17px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    position: absolute;
+    width: 107px;
+    height: 27px;
+    left: 401px;
+    top: 325px;
+    background-color: #0E80BF;
+    border-radius: 4px ;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 0px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+#PersonalPhoto {
+    position: absolute;
+    width: 232px;
+    height: 22px;
+    left: 150px;
+    top: 325px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #1A1A1A;
+}
+
+#inline-div {
+    position: absolute;
+    width: 662px;
+    height: 20px;
+    top: 402px;
+    left: 80px;
+}
+
+#inline-div_2 {
+    position: absolute;
+    height: 19px;
+    width: 183px;
+    left: 80px;
+    top: 429px;
+}
+
+#right_experience_header, #right_experience_header_2 {
+    display: inline-block;
+    /* margin-top: 402px;
+    margin-left: 80px; */
+}

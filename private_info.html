@@ -8,7 +8,7 @@
     <script src="script.js"></script>
     <title>Private info</title>
 </head>
-<body>
+<body onload="private_info()">
     <main>
         <section class="private_section">
                 <div id="left_div">
@@ -33,11 +33,6 @@
                         <figcaption id="private_caption">მინიმუმ 2 ასო, ქართული ასოები</figcaption>
                     </div>
                     <div id="private_photo_upload">
-                            <!-- <label for="private_upload" class="custom-file-upload">
-                                პირადი ფოტოს ატვირთვა
-                            </label>
-                            <input type="file" onchange="pictureUpload(event)" accept="image/*" id="private_upload" name="filename">
-                            <button type="button" id="private_upload_btn">ატვირთვა</button> -->
                             <span id="PersonalPhoto" class="PersonalPhoto">პირადი ფოტოს ატვირთვა</span>
                             <label for="private_photo_upload_1" id="upload">ატვირთვა</label>
                             <input id="private_photo_upload_1" onchange="pictureUpload(event)" accept="image/*" type="file" >
@@ -45,8 +40,19 @@
                     <script>
                         var pictureUpload = function(event) {
                             const right_img = document.getElementById("right_img");
-                            right_img.style.backgroundImage = "url("+URL.createObjectURL(event.target.files[0])+")"
+                            right_img.style.content = "url("+URL.createObjectURL(event.target.files[0])+")";
+                            console.log(right_img.style.content);
+                            document.getElementById("right_img").style.display = "block";
                         }
+                        document.querySelector("#private_photo_upload_1").addEventListener("change", function () {
+                            const reader = new FileReader();
+                            reader.addEventListener("load", () => {
+                                sessionStorage.setItem("url1", reader.result);
+                                localStorage.setItem("url1", reader.result);
+                            });
+                            reader.readAsDataURL(this.files[0]);
+                            return true;
+                        });
                     </script>
                     <div id="private_about_me">
                         <h1>ჩემ შესახებ (არასავალდებულო)</h1>
