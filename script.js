@@ -172,6 +172,26 @@ function Experience() {
     email.innerHTML = sessionStorage.getItem("email");
     const phone_number = document.getElementById("phone_number");
     phone_number.innerHTML = sessionStorage.getItem("number");
+    const Position = document.getElementById("right_experience_header");
+    document.getElementById("position_input").value = localStorage.getItem("position_input");
+    Position.innerHTML = localStorage.getItem("position_input") + ", ";
+    Position.style.display = "inline";
+    const Employer = document.getElementById("right_experience_header_2");
+    document.getElementById("employer_input").value = localStorage.getItem("employer_input");
+    Employer.innerHTML = localStorage.getItem("employer_input");
+    Employer.style.display = "inline";
+    const Beginning = document.getElementById("right_paragraph");
+    document.getElementById("beginning_input").value = localStorage.getItem("beginning_input");
+    Beginning.innerHTML = localStorage.getItem("beginning_input") + " - ";
+    Beginning.style.display = "inline";
+    const End = document.getElementById("right_paragraph_3");
+    document.getElementById("end_input").value = localStorage.getItem("end_input");
+    End.innerHTML = localStorage.getItem("end_input");
+    End.style.display = "inline";
+    const textarea = document.getElementById("right_paragraph_2");
+    document.getElementById("description_textArea").value = localStorage.getItem("description_textArea");
+    textarea.innerHTML = localStorage.getItem("description_textArea");
+    textarea.style.display = "block";
     document.getElementById('phone_logo').style.display = "block";
     document.getElementById('email_logo').style.display = "block";
     document.getElementById('right_about_me').style.display = "block";
@@ -181,6 +201,34 @@ function Experience() {
     if(recentImageUrl) {
         document.getElementById("right_img").setAttribute("src",recentImageUrl);
     }
+    const count = localStorage.getItem("count");
+    for(let i = 0; i < count; i++){
+        if(localStorage.getItem("employer_input" + (i + 1)) != null && localStorage.getItem("employer_input" + (i + 1)) != ""){
+            document.getElementById("employer_input" + (i + 1)).value = localStorage.getItem("employer_input" + (i + 1));
+            employer();
+        }
+        if(localStorage.getItem("position_input" + (i + 1)) != null && localStorage.getItem("position_input" + (i + 1)) != ""){
+            document.getElementById("position_input" + (i + 1)).value = localStorage.getItem("position_input" + (i + 1));
+            position();
+        }
+        if(localStorage.getItem("beginning_input" + (i + 1)) != null && localStorage.getItem("beginning_input" + (i + 1)) != ""){
+            document.getElementById("beginning_input" + (i + 1)).value = localStorage.getItem("beginning_input" + (i + 1));
+            beginning();
+        }
+        if(localStorage.getItem("end_input" + (i + 1)) != null && localStorage.getItem("end_input" + (i + 1)) != ""){
+            document.getElementById("end_input" + (i + 1)).value = localStorage.getItem("end_input" + (i + 1));
+            end();
+        }
+        if(localStorage.getItem("description_textArea" + (i + 1)) != null && localStorage.getItem("description_textArea" + (i + 1)) != ""){
+            document.getElementById("description_textArea" + (i + 1)).value = localStorage.getItem("description_textArea" + (i + 1));
+            position_description();
+        }
+    }   
+    employer();
+    position();
+    beginning();
+    end();
+    position_description();
     check_length();
 }
 
@@ -211,21 +259,31 @@ function private_info() {
 }
 
 function position() {
-    const position = document.getElementById("right_experience_header");
+    const Position = document.getElementById("right_experience_header");
     const count = localStorage.getItem("count");
     for(let i = 0; i < count; i++){
         if(document.getElementById("position_input"+(i + 1)).value.length >= 2){
-            document.getElementById("validated_img_5").style.display = "block";
+            document.getElementById("validated_img"+(i + 1)).style.display = "block";
             document.getElementById("position_input"+(i + 1)).style.border="1px solid #98E37E";
             document.getElementById("warning-sign"+(i + 1)).style.display = "none";
-            position.innerHTML = document.getElementById("position_input").value + ",";
-            position.style.display = "inline";
             localStorage.setItem("position_input" + (i + 1),document.getElementById("position_input" + (i + 1)).value);
+            sessionStorage.setItem("position_input" + (i + 1),document.getElementById("position_input" + (i + 1)).value);
+            document.getElementById("right_experience_header_1_" + (i + 1)).innerHTML = localStorage.getItem("position_input" + (i + 1)) + ", ";
+            const experience = document.getElementById("right_experience_title_" + (i + 1));
+            experience.style.display = "block";
+            Position.innerHTML = document.getElementById("position_input").value + ",";
+            Position.style.display = "inline";
         }else{
-            position.style.display = "none";
-            document.getElementById("validated_img_5").style.display = "none";
+            Position.style.display = "none";
+            localStorage.setItem("position_input" + (i + 1),document.getElementById("position_input" + (i + 1)).value);
+            document.getElementById("right_experience_header_1_" + (i + 1)).innerHTML = localStorage.getItem("position_input" + (i + 1));
+            document.getElementById("validated_img"+(i + 1)).style.display = "none";
             document.getElementById("warning-sign"+(i + 1)).style.display = "block";
             document.getElementById("position_input"+(i + 1)).style.border="1px solid #EF5050";
+            if(document.getElementById("position_input"+(i + 1)).value == ""){
+                document.getElementById("position_input"+(i + 1)).style.border="1px solid #BCBCBC";
+                document.getElementById("warning-sign"+(i + 1)).style.display = "none";
+            }
         }
     }
     if(document.getElementById("position_input").value.length >= 2){
@@ -233,14 +291,20 @@ function position() {
         document.getElementById("right_experience_title").style.display = "block";
         document.getElementById("position_input").style.border="1px solid #98E37E";
         document.getElementById("warning-sign_5").style.display = "none";
-        position.innerHTML = document.getElementById("position_input").value + ",";
-        position.style.display = "inline";
+        Position.innerHTML = document.getElementById("position_input").value + ",";
+        Position.style.display = "inline";
         localStorage.setItem("position_input",document.getElementById("position_input").value);
+        sessionStorage.setItem("position_input",document.getElementById("position_input").value);
     }else{
-        position.style.display = "none";
+        document.getElementById("right_experience_title").style.display = "none";
+        Position.style.display = "none";
         document.getElementById("validated_img_5").style.display = "none";
         document.getElementById("warning-sign_5").style.display = "block";
         document.getElementById("position_input").style.border="1px solid #EF5050";
+        if(document.getElementById("position_input").value == ""){
+            document.getElementById("position_input").style.border="1px solid #BCBCBC";
+            document.getElementById("warning-sign_5").style.display = "none";
+        }
     }
 }
 
@@ -249,17 +313,27 @@ function employer() {
     const count = localStorage.getItem("count");
     for(let i = 0; i < count; i++){
         if(document.getElementById("employer_input" + (i + 1)).value.length >= 2){
-            document.getElementById("validated_img_6").style.display = "block";
+            document.getElementById("validated_img_1_"+(i + 1)).style.display = "block";
             document.getElementById("employer_input" + (i + 1)).style.border="1px solid #98E37E";
             document.getElementById("warning-1-sign" + (i + 1)).style.display = "none";
             localStorage.setItem("employer_input" + (i + 1),document.getElementById("employer_input" + (i + 1)).value);
+            sessionStorage.setItem("employer_input" + (i + 1),document.getElementById("employer_input" + (i + 1)).value);
+            document.getElementById("right_experience_header_2_" + (i + 1)).innerHTML = localStorage.getItem("employer_input" + (i + 1));
+            const experience = document.getElementById("right_experience_title_" + (i + 1));
+            experience.style.display = "block";
             employer.innerHTML = document.getElementById("employer_input" + (i + 1)).value;
             employer.style.display = "inline";
         }else{
             employer.style.display = "none";
-            document.getElementById("validated_img_6").style.display = "none";
+            localStorage.setItem("employer_input" + (i + 1),document.getElementById("employer_input" + (i + 1)).value);
+            document.getElementById("right_experience_header_2_" + (i + 1)).innerHTML = localStorage.getItem("employer_input" + (i + 1));
+            document.getElementById("validated_img_1_"+(i + 1)).style.display = "none";
             document.getElementById("warning-1-sign" + (i + 1)).style.display = "block";
             document.getElementById("employer_input" + (i + 1)).style.border="1px solid #EF5050";
+            if(document.getElementById("employer_input"+(i + 1)).value == ""){
+                document.getElementById("employer_input"+(i + 1)).style.border="1px solid #BCBCBC";
+                document.getElementById("warning-1-sign"+(i + 1)).style.display = "none";
+            }
         }
     }
     if(document.getElementById("employer_input").value.length >= 2){
@@ -269,12 +343,17 @@ function employer() {
         document.getElementById("warning-sign_6").style.display = "none";
         employer.innerHTML = document.getElementById("employer_input").value;
         localStorage.setItem("employer_input",document.getElementById("employer_input").value);
+        sessionStorage.setItem("employer_input",document.getElementById("employer_input").value);
         employer.style.display = "inline";
     }else{
         employer.style.display = "none";
         document.getElementById("validated_img_6").style.display = "none";
         document.getElementById("warning-sign_6").style.display = "block";
         document.getElementById("employer_input").style.border="1px solid #EF5050";
+        if(document.getElementById("employer_input").value == ""){
+            document.getElementById("employer_input").style.border="1px solid #BCBCBC";
+            document.getElementById("warning-sign_6").style.display = "none";
+        }
     }
 }
 
@@ -287,19 +366,34 @@ function beginning() {
             beginning.innerHTML = document.getElementById("beginning_input" + (i + 1)).value + " - ";
             beginning.style.display = "inline";
             localStorage.setItem("beginning_input" + (i + 1),document.getElementById("beginning_input" + (i + 1)).value);
+            sessionStorage.setItem("beginning_input" + (i + 1),document.getElementById("beginning_input" + (i + 1)).value);
+            if(document.getElementById("beginning_input" + (i + 1)).value != ""){
+                document.getElementById("right_paragraph" + (i + 1)).innerHTML = localStorage.getItem("beginning_input" + (i + 1)) + " - ";
+            }
         }else{
             beginning.style.display = "none";
+            localStorage.setItem("beginning_input" + (i + 1),document.getElementById("beginning_input" + (i + 1)).value);
+            if(document.getElementById("beginning_input" + (i + 1)).value != ""){
+                document.getElementById("right_paragraph" + (i + 1)).innerHTML = localStorage.getItem("beginning_input" + (i + 1)) + " - ";
+            }
             document.getElementById("beginning_input" + (i + 1)).style.border="1px solid #EF5050";
+            if(document.getElementById("beginning_input"+(i + 1)).value == ""){
+                document.getElementById("beginning_input"+(i + 1)).style.border="1px solid #BCBCBC";
+            }
         }
     }
     if(document.getElementById("beginning_input").value){
         document.getElementById("beginning_input").style.border="1px solid #98E37E";
         beginning.innerHTML = document.getElementById("beginning_input").value + " - ";
         localStorage.setItem("beginning_input",document.getElementById("beginning_input").value);
+        sessionStorage.setItem("beginning_input",document.getElementById("beginning_input").value);
         beginning.style.display = "inline";
     }else{
         beginning.style.display = "none";
         document.getElementById("beginning_input").style.border="1px solid #EF5050";
+        if(document.getElementById("beginning_input").value == ""){
+            document.getElementById("beginning_input").style.border="1px solid #BCBCBC";
+        }
     }
 }
 
@@ -312,19 +406,30 @@ function end() {
             document.getElementById("end_input" + (i + 1)).style.border="1px solid #98E37E";
             beginning.style.display = "inline";
             localStorage.setItem("end_input" + (i + 1),document.getElementById("end_input" + (i + 1)).value);
+            sessionStorage.setItem("end_input" + (i + 1),document.getElementById("end_input" + (i + 1)).value);
+            document.getElementById("right_paragraph_3_" + (i + 1)).innerHTML = localStorage.getItem("end_input" + (i + 1));
         }else{
             beginning.style.display = "none";
+            localStorage.setItem("end_input" + (i + 1),document.getElementById("end_input" + (i + 1)).value);
+            document.getElementById("right_paragraph_3_" + (i + 1)).innerHTML = localStorage.getItem("end_input" + (i + 1));
             document.getElementById("end_input" + (i + 1)).style.border="1px solid #EF5050";
+            if(document.getElementById("end_input"+(i + 1)).value == ""){
+                document.getElementById("end_input"+(i + 1)).style.border="1px solid #BCBCBC";
+            }
         }
     }
     if(document.getElementById("end_input").value){
         beginning.innerHTML = document.getElementById("end_input").value;
         document.getElementById("end_input").style.border="1px solid #98E37E";
         localStorage.setItem("end_input",document.getElementById("end_input").value);
+        sessionStorage.setItem("end_input",document.getElementById("end_input").value);
         beginning.style.display = "inline";
     }else{
         beginning.style.display = "none";
         document.getElementById("end_input").style.border="1px solid #EF5050";
+        if(document.getElementById("end_input").value == ""){
+            document.getElementById("end_input").style.border="1px solid #BCBCBC";
+        }
     }
 }
 
@@ -337,22 +442,83 @@ function position_description() {
             position.innerHTML = document.getElementById("description_textArea" + (i + 1)).value;
             position.style.display = "block";
             localStorage.setItem("description_textArea" + (i + 1),document.getElementById("description_textArea" + (i + 1)).value);
+            sessionStorage.setItem("description_textArea" + (i + 1),document.getElementById("description_textArea" + (i + 1)).value);
+            document.getElementById("right_paragraph_2_" + (i + 1)).innerHTML = localStorage.getItem("description_textArea" + (i + 1));
         }else{
             position.style.display = "none";
+            localStorage.setItem("description_textArea" + (i + 1),document.getElementById("description_textArea" + (i + 1)).value);
+            document.getElementById("right_paragraph_3_" + (i + 1)).innerHTML = localStorage.getItem("end_input" + (i + 1));
             document.getElementById("description_textArea" + (i + 1)).style.border="1px solid #EF5050";
+            if(document.getElementById("description_textArea"+(i + 1)).value == ""){
+                document.getElementById("description_textArea"+(i + 1)).style.border="1px solid #BCBCBC";
+            }
         }
     }
     if(document.getElementById("description_textArea").value.length > 0){
         document.getElementById("description_textArea").style.border="1px solid #98E37E";
         position.innerHTML = document.getElementById("description_textArea").value;
         localStorage.setItem("description_textArea",document.getElementById("description_textArea").value);
+        sessionStorage.setItem("description_textArea",document.getElementById("description_textArea").value);
         position.style.display = "block";
     }else{
         position.style.display = "none";
         document.getElementById("description_textArea").style.border="1px solid #EF5050";
+        if(document.getElementById("description_textArea").value == ""){
+            document.getElementById("description_textArea").style.border="1px solid #BCBCBC";
+        }
     }
 }
+function checkValidation() {
+    const count = localStorage.getItem("count");
+    let bool = true;
+    for(let i = 0; i < count; i++){
+        if(document.getElementById("position_input"+(i + 1)).style.border=="1px solid rgb(239, 80, 80)"){
+            bool = false;
+        }else if(document.getElementById("employer_input" + (i + 1)).style.border=="1px solid rgb(239, 80, 80)"){
+            bool = false;
+        }else if(document.getElementById("beginning_input" + (i + 1)).style.border=="1px solid rgb(239, 80, 80)"){
+            bool = false;
+        }else if(document.getElementById("end_input" + (i + 1)).style.border=="1px solid rgb(239, 80, 80)"){
+            bool = false;
+        }else if(document.getElementById("description_textArea" + (i + 1)).style.border=="1px solid rgb(239, 80, 80)"){
+            bool = false;
+        }else if(document.getElementById("position_input").value.length < 2){
+            bool = false;
+        }else if(document.getElementById("employer_input").value.length < 2){
+            bool = false;
+        }else if(document.getElementById("beginning_input").value == ""){
+            bool = false;
+        }else if(document.getElementById("end_input").value == ""){
+            bool = false;
+        }else if(document.getElementById("description_textArea").value == ""){
+            bool = false;
+        }
 
+        if(document.getElementById("position_input"+(i + 1)).style.border=="1px solid rgb(152, 227, 126)" || document.getElementById("employer_input"+(i + 1)).style.border=="1px solid rgb(152, 227, 126)" || document.getElementById("beginning_input"+(i + 1)).style.border=="1px solid rgb(152, 227, 126)" || document.getElementById("end_input"+(i + 1)).style.border=="1px solid rgb(152, 227, 126)" || document.getElementById("description_textArea"+(i + 1)).style.border=="1px solid rgb(152, 227, 126)"){
+            console.log(i);
+            if(document.getElementById("position_input"+(i + 1)).value == ""){
+                document.getElementById("position_input"+(i + 1)).style.border="1px solid #EF5050";
+                bool = false;
+            }if(document.getElementById("employer_input"+(i + 1)).value == ""){
+                document.getElementById("employer_input"+(i + 1)).style.border="1px solid #EF5050";
+                bool = false;
+            }if(document.getElementById("beginning_input"+(i + 1)).value == ""){
+                document.getElementById("beginning_input"+(i + 1)).style.border="1px solid #EF5050";
+                bool = false;
+            }if(document.getElementById("end_input"+(i + 1)).value == ""){
+                document.getElementById("end_input"+(i + 1)).style.border="1px solid #EF5050";
+                bool = false;
+            }   if(document.getElementById("description_textArea"+(i + 1)).value == ""){
+                document.getElementById("description_textArea"+(i + 1)).style.border="1px solid #EF5050";
+                bool = false;
+            }
+        }
+    }
+    if(bool == true){
+        window.location.href="/education.html";
+    }
+    console.log(bool);
+}
 function onLoad(){
     const count = parseInt(localStorage.getItem("count"));
     for(let i = 0; i < count; i++) {
@@ -375,10 +541,63 @@ function onLoad(){
         const bottom_line = document.createElement("section");
         const warning = document.createElement("section");
         const warning_1 = document.createElement("section");
-        warning.id = "warning-sign"+count;
+        const validated = document.createElement("section");
+        const validated_1 = document.createElement("section");
+
+        const right_line = document.createElement("div");
+        const right_experience_title = document.createElement("h1");
+        const inline_div = document.createElement("div");
+        const inline_div_2 = document.createElement("div");
+        const right_experience_header = document.createElement("h1");
+        const right_experience_header_2 = document.createElement("h1");
+        const right_paragraph = document.createElement("p");
+        const right_paragraph_3 = document.createElement("p");
+        const right_paragraph_2 = document.createElement("p");
+
+        right_line.id = "right_line_1";
+        right_line.style.top = "549px";
+        inline_div.id = "inline_div_"+(i + 1);
+        inline_div.className = "inline-div-3";
+        inline_div.style.top = "610px";
+        inline_div_2.id = "inline-div"+(i + 1);
+        inline_div_2.className = "inline-div_4";
+        inline_div_2.style.top = "637px";
+        right_experience_title.id = "right_experience_title_" + (i + 1);
+        right_experience_title.className = "right_experience_title";
+        right_experience_title.innerHTML = "გამოცდილება";
+        right_experience_title.style.left = "0px";
+        right_experience_header.id = "right_experience_header_1_" + (i + 1);
+        right_experience_header.className = "right_experience_header";
+        right_experience_header.style.display = "inline";
+        right_experience_header.style.top = "61px";
+        right_experience_header.style.left = "0px";
+        right_paragraph.id = "right_paragraph" + (i + 1);
+        right_paragraph.className = "right_paragraph";
+        right_paragraph.style.display = "inline";
+        right_paragraph_3.id = "right_paragraph_3_" + (i + 1);
+        right_paragraph_3.className = "right_paragraph_3";
+        right_paragraph_3.style.display = "inline";
+        right_paragraph_2.id = "right_paragraph_2_" + (i + 1);
+        right_paragraph_2.className = "right_paragraph_2";
+        right_paragraph_2.style.top = "672px";
+        right_experience_header_2.id = "right_experience_header_2_"+ (i + 1);
+        right_experience_header_2.className = "right_experience_header_2";
+        right_experience_header_2.style.display = "inline";
+        right_experience_header_2.style.top = "61px";
+        right_experience_header_2.style.left = "40px";
+
+        warning.id = "warning-sign"+(i + 1);
         warning.className = "warning-sign";
         warning.style.left = "822px";
-        warning_1.id = "warning-1-sign"+count;
+        validated.id = "validated_img"+(i + 1);
+        validated.className = "validated-sign";
+        validated.style.left = "760px";
+        validated.style.top = "81px";
+        validated_1.id = "validated_img_1_"+(i + 1);
+        validated_1.className = "validated-sign";
+        validated_1.style.left = "760px";
+        validated_1.style.top = "81px";
+        warning_1.id = "warning-1-sign"+(i + 1);
         warning_1.className = "warning-sign";
         warning_1.style.left = "822px";
         bottom_line.id = "bottom_line";
@@ -404,10 +623,10 @@ function onLoad(){
         employer_input.className = "employer_input";
         beginning_input.className = "beginning_input";
         beginning_input.onchange = beginning;
-        beginning_input.id = "beginning_input"+count;
+        beginning_input.id = "beginning_input"+(i + 1);
         beginning_input.type = "date";
         beginning_input.style.left = "0px";
-        end_input.id = "end_input"+count;
+        end_input.id = "end_input"+(i+1);
         end_input.type = "date";
         end_input.style.left = "0px";
         end_input.onchange = end;
@@ -448,6 +667,16 @@ function onLoad(){
         document.getElementById("bottom_line").appendChild(experience_description);
         document.getElementById("bottom_line").appendChild(bottom_line);
         document.getElementById("bottom_line").appendChild(warning);
+        document.getElementById("bottom_line").appendChild(validated);
+        document.getElementById("right_div").appendChild(right_line);
+        document.getElementById("right_div").appendChild(inline_div);
+        document.getElementById("right_div").appendChild(inline_div_2);
+        document.getElementById("inline-div"+(i + 1)).appendChild(right_paragraph);
+        document.getElementById("inline-div"+(i + 1)).appendChild(right_paragraph_3);
+        document.getElementById("right_div").appendChild(right_paragraph_2);
+        document.getElementById("right_line_1").appendChild(right_experience_title);
+        document.getElementById("inline_div_"+(i + 1)).appendChild(right_experience_header);
+        document.getElementById("inline_div_"+(i + 1)).appendChild(right_experience_header_2);
         experience_description.appendChild(description_header);
         experience_description.appendChild(description_textArea);
         end_date.appendChild(end_h1);
@@ -458,6 +687,7 @@ function onLoad(){
         section.appendChild(employer_input);
         section.appendChild(employer_caption);
         section.appendChild(warning_1);
+        section.appendChild(validated_1);
         const btn = document.getElementById("add_experience_btn");
         const btn_1 = document.getElementById("go_back_btn");
         const btn_2 = document.getElementById("next_page_btn");
@@ -474,16 +704,30 @@ function onLoad(){
         employer_caption.style.top = employer_caption.offsetTop + 29 + ((647) * (i)) + 'px';
         caption.style.top = caption.offsetTop + (29) + ((647) * (i)) + 'px';
         bottom_line.style.top = bottom_line.offsetTop + ((647) * (i)) + 'px';
+        right_line.style.top = right_line.offsetTop + ((208) * (i)) + 'px';
+        inline_div.style.top = inline_div.offsetTop + ((208) * (i)) + 'px';
+        inline_div_2.style.top = inline_div_2.offsetTop + ((208) * (i)) + 'px';
+        right_paragraph_2.style.top = right_paragraph_2.offsetTop + ((208) * (i)) + 'px';
         warning_1.style.top = input.offsetTop + (12) + 'px';
         warning.style.top = input.offsetTop + (12) + 'px';
+        validated.style.top = input.offsetTop + (18) + 'px';
+        validated_1.style.top = input.offsetTop + (18) + 'px';
         if(i == 0){
             btn.style.top = btn.offsetTop + (647) + 'px';
             btn_1.style.top = btn_1.offsetTop + (647)  + 'px';
             btn_2.style.top = btn_2.offsetTop + (647)  + 'px';
+            right_experience_title.style.top = right_experience_title.offsetTop + (24) + 'px';
         }else{
+            right_experience_title.style.top = right_experience_title.offsetTop + ((208) * (i)) + 24 + 'px';
             btn.style.top = btn.offsetTop + (647) + 'px';
             btn_1.style.top = btn_1.offsetTop + (647) + 'px';
             btn_2.style.top = btn_2.offsetTop + (647) + 'px';
+        }
+        if(i >= 2){
+            const round_logo = document.getElementById("round_logo");
+            const right_div = document.getElementById("right_div");
+            round_logo.style.top = round_logo.offsetTop + (208) + 'px';
+            right_div.style.height = right_div.offsetHeight + (208) + 'px';
         }
     }
 }
@@ -508,6 +752,18 @@ function add_experience() {
     const bottom_line = document.createElement("section");
     const warning = document.createElement("section");
     const warning_1 = document.createElement("section");
+    const validated = document.createElement("section");
+    const validated_1 = document.createElement("section");
+
+    const right_line = document.createElement("div");
+    const right_experience_title = document.createElement("h1");
+    const inline_div = document.createElement("div");
+    const inline_div_2 = document.createElement("div");
+    const right_experience_header = document.createElement("h1");
+    const right_experience_header_2 = document.createElement("h1");
+    const right_paragraph = document.createElement("p");
+    const right_paragraph_3 = document.createElement("p");
+    const right_paragraph_2 = document.createElement("p");
     let count = 0;
     count++;
     if(localStorage.getItem("count")){
@@ -516,6 +772,22 @@ function add_experience() {
     }else{
         localStorage.setItem("count",count);
     }
+
+    if(count >= 3){
+        const round_logo = document.getElementById("round_logo");
+        const right_div = document.getElementById("right_div");
+        round_logo.style.top = round_logo.offsetTop + (208) + 'px';
+        right_div.style.height = right_div.offsetHeight + (208) + 'px';
+    }
+
+    validated.id = "validated_img"+count;
+    validated.className = "validated-sign";
+    validated.style.left = "760px";
+    validated.style.top = "81px";
+    validated_1.id = "validated_img_1_"+count;
+    validated_1.className = "validated-sign";
+    validated_1.style.left = "760px";
+    validated_1.style.top = "81px";
     warning.id = "warning-sign"+count;
     warning.className = "warning-sign";
     warning.style.left = "822px";
@@ -525,6 +797,14 @@ function add_experience() {
     bottom_line.id = "bottom_line";
     bottom_line.style.left = "0px";
     bottom_line.style.top = "631px";
+    right_line.id = "right_line_1";
+    right_line.style.top = "549px";
+    inline_div.id = "inline_div_"+count;
+    inline_div.className = "inline-div-3";
+    inline_div.style.top = "610px";
+    inline_div_2.id = "inline-div"+count;
+    inline_div_2.className = "inline-div_4";
+    inline_div_2.style.top = "637px";
     description_textArea.className = "description_textArea";
     description_textArea.id = "description_textArea" + count;
     description_textArea.placeholder = "როლი თანამდებობაბე და ზოგადი აღწერა";
@@ -559,6 +839,30 @@ function add_experience() {
     input.placeholder = placeholder="დეველოპერი, დიზაინერი, ა.შ.";
     Position.id = "position_header";
     Position.innerHTML = "თანამდებობა";
+    right_experience_title.id = "right_experience_title_" + count;
+    right_experience_title.className = "right_experience_title";
+    right_experience_title.innerHTML = "გამოცდილება";
+    right_experience_title.style.left = "0px";
+    right_experience_title.style.top = "24px";
+    right_experience_header.id = "right_experience_header_1_" + count;
+    right_experience_header.className = "right_experience_header";
+    right_experience_header.style.display = "inline";
+    right_experience_header.style.top = "61px";
+    right_experience_header.style.left = "0px";
+    right_paragraph.id = "right_paragraph" + count;
+    right_paragraph.className = "right_paragraph";
+    right_paragraph.style.display = "inline";
+    right_paragraph_3.id = "right_paragraph_3_" + count;
+    right_paragraph_3.className = "right_paragraph_3";
+    right_paragraph_3.style.display = "inline";
+    right_paragraph_2.id = "right_paragraph_2_"+count;
+    right_paragraph_2.className = "right_paragraph_2";
+    right_paragraph_2.style.top = "672px";
+    right_experience_header_2.id = "right_experience_header_2_" + count;
+    right_experience_header_2.className = "right_experience_header_2";
+    right_experience_header_2.style.display = "inline";
+    right_experience_header_2.style.top = "61px";
+    right_experience_header_2.style.left = "40px";
     caption.id = "position_caption";
     caption.innerHTML = "მინიმუმ 2 სიმბოლო";
     section.id = "experience_employer";
@@ -591,6 +895,16 @@ function add_experience() {
     document.getElementById("bottom_line").appendChild(experience_description);
     document.getElementById("bottom_line").appendChild(bottom_line);
     document.getElementById("bottom_line").appendChild(warning);
+    document.getElementById("bottom_line").appendChild(validated);
+    document.getElementById("right_div").appendChild(right_line);
+    document.getElementById("right_div").appendChild(inline_div);
+    document.getElementById("right_div").appendChild(inline_div_2);
+    document.getElementById("inline-div"+count).appendChild(right_paragraph);
+    document.getElementById("inline-div"+count).appendChild(right_paragraph_3);
+    document.getElementById("right_div").appendChild(right_paragraph_2);
+    document.getElementById("right_line_1").appendChild(right_experience_title);
+    document.getElementById("inline_div_"+count).appendChild(right_experience_header);
+    document.getElementById("inline_div_"+count).appendChild(right_experience_header_2);
     experience_description.appendChild(description_header);
     experience_description.appendChild(description_textArea);
     end_date.appendChild(end_h1);
@@ -601,6 +915,7 @@ function add_experience() {
     section.appendChild(employer_input);
     section.appendChild(employer_caption);
     section.appendChild(warning_1);
+    section.appendChild(validated_1);
     const btn = document.getElementById("add_experience_btn");
     const btn_1 = document.getElementById("go_back_btn");
     const btn_2 = document.getElementById("next_page_btn");
@@ -620,6 +935,13 @@ function add_experience() {
     employer_caption.style.top = employer_caption.offsetTop + 29 + ((647) * (count - 1)) + 'px';
     caption.style.top = caption.offsetTop + (29) + ((647) * (count - 1)) + 'px';
     bottom_line.style.top = bottom_line.offsetTop + ((647) * (count - 1)) + 'px';
+    right_line.style.top = right_line.offsetTop + ((208) * (count - 1)) + 'px';
+    inline_div.style.top = inline_div.offsetTop + ((208) * (count - 1)) + 'px';
+    inline_div_2.style.top = inline_div_2.offsetTop + ((208) * (count - 1)) + 'px';
+    right_paragraph_2.style.top = right_paragraph_2.offsetTop + ((208) * (count - 1)) + 'px';
+    right_experience_title.style.top = right_experience_title.offsetTop + ((208) * (count - 1)) + 24 + 'px';
     warning_1.style.top = input.offsetTop + (12) + 'px';
     warning.style.top = input.offsetTop + (12) + 'px';
+    validated.style.top = input.offsetTop + (18) + 'px';
+    validated_1.style.top = input.offsetTop + (18) + 'px';
 }
