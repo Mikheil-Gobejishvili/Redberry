@@ -836,7 +836,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     line-height: 29px;
 }
 
-#right_div #right_line {
+#right_div #right_line, #right_line_1 {
     position: absolute;
     height: 0px;
     width: 662.0000000000025px;
@@ -846,11 +846,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     border: 1px solid #C8C8C8;
 }
 
-#right_div #right_experience_title,#right_div #right_experience_header, #right_div #right_experience_header_2,#right_div #right_paragraph,#right_div #right_paragraph_2,#right_div #right_paragraph_3 {
+#right_div #right_experience_title,#right_div .right_experience_title,#right_div #right_experience_header, #right_div .right_experience_header, #right_div .right_experience_header_2, #right_div #right_experience_header_2,#right_div #right_paragraph,#right_div .right_paragraph,#right_div #right_paragraph_2,#right_div .right_paragraph_2,#right_div #right_paragraph_3,#right_div .right_paragraph_3 {
     margin: 0px;
 } 
 
-#right_div #right_experience_title {
+#right_div #right_experience_title, #right_div .right_experience_title {
     position: absolute;
     display: none;
     height: 22px;
@@ -865,30 +865,30 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 }
 
-#right_div #right_experience_header, #right_div #right_experience_header_2 {
+#right_div #right_experience_header, #right_div #right_experience_header_2, #right_div .right_experience_header, #right_div .right_experience_header_2 {
     border-radius: 0px;
     font-size: 16px;
     font-weight: 500;
     line-height: 20px;
 }
 
-#right_div #right_experience_header {
+#right_div #right_experience_header, .right_div #right_experience_header {
     display: none;
     height: 20px;
     width: min-content;
 }
 
-#right_div #right_experience_header_2 {
+#right_div #right_experience_header_2, #right_div .right_experience_header_2 {
     height: 20px;
     width: 70px;
 }
 
-#right_div #right_paragraph,#right_div #right_paragraph_3 {
+#right_div #right_paragraph,#right_div .right_paragraph,#right_div #right_paragraph_3, #right_div .right_paragraph_3{
     display: none;
     opacity: 0.5;
 }
 
-#right_div #right_paragraph_2 {
+#right_div #right_paragraph_2, #right_div .right_paragraph_2 {
     position: absolute;
     height: 66px;
     width: 662px;
@@ -1198,7 +1198,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background-image: url("/images/validated.png");
 }
 
-#validated_img_3, #validated_img_4, #validated_img_5, #validated_img_6 {
+#validated_img_3, #validated_img_4, #validated_img_5, #validated_img_6, .validated-sign{
     display: none;
     z-index: 3;
     position: absolute;
@@ -1226,19 +1226,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     left: 415px;
 }
 
-#warning-sign_3, #warning-sign_4,#warning-sign_5,#warning-sign_6, #warning-sign_8{
-    position: absolute;
-    display: none;
-    background-size: contain;
-    height: 24px;
-    width: 22px;
-    top: 49px;
-    left: 846px;
-    border-radius: 0px;
-    background-image: url("/images/warning.png");
-}
-
-.warning-sign {
+#warning-sign_3, #warning-sign_4,#warning-sign_5,#warning-sign_6, #warning-sign_8, .warning-sign{
     position: absolute;
     display: none;
     background-size: contain;
@@ -1295,7 +1283,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: #1A1A1A;
 }
 
-#inline-div {
+#inline-div, .inline-div-3 {
     position: absolute;
     width: 662px;
     height: 20px;
@@ -1303,16 +1291,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     left: 80px;
 }
 
-#inline-div_2 {
+#inline-div_2, .inline-div_4 {
     position: absolute;
     height: 19px;
     width: 183px;
     left: 80px;
     top: 429px;
-}
-
-#right_experience_header, #right_experience_header_2 {
-    display: inline-block;
-    /* margin-top: 402px;
-    margin-left: 80px; */
 }
