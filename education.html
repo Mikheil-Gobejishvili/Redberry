@@ -6,40 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <title>Education</title>
+    <script src="script.js"></script>
 </head>
-<body>
+<body style="background: #F9F9F9" onload="loadEducation(),Education()">
     <main>
         <section id="education_section">
             <div id="left_div">
                 <div id="academy">
                     <h1 id="education_left_paragraph">სასწავლებელი</h1>
-                    <input type="text" id="academy_name" placeholder="სასწავლებელი">
+                    <input type="text" id="academy_name" onchange="academy()" placeholder="სასწავლებელი">
+                    <div id="warning-sign_5"></div>
+                    <div id="validated_img_5"></div>
                     <figcaption id="education_caption">მინიმუმ 2 სიმბოლო</figcaption>
                 </div>
                 <div id="degree">
                     <h1 id="degree_header">ხარისხი</h1>
-                    <select name="cars" id="cars">
+                    <select name="universities" onchange="selection()" id="universities">
                         <option>აირჩიეთ ხარისხი</option>
-                        <option value="middle_school_diploma">საშუალო სკოლის დიპლომი</option>
-                        <option value="general_diploma">ზოგადსაგანმანათლებლო დიპლომი</option>
-                        <option value="bachelor_diploma">ბაკალავრი დიპლომი</option>
-                        <option value="masters_diploma">მაგისტრი დიპლომი</option>
-                        <option value="doctors_diploma">დოქტორი დიპლომი</option>
-                        <option value="associated_degree">ასოცირებული ხარისხი</option>
-                        <option value="student">სტუდენტი</option>
-                        <option value="college">კოლეჯი (ხარისხის გარეშე)</option>
-                        <option value="else">სხვა</option>
-                      </select>
+                        <option value="საშუალო სკოლის დიპლომი">საშუალო სკოლის დიპლომი</option>
+                        <option value="ზოგადსაგანმანათლებლო დიპლომი">ზოგადსაგანმანათლებლო დიპლომი</option>
+                        <option value="ბაკალავრი დიპლომი">ბაკალავრის დიპლომი</option>
+                        <option value="მაგისტრი დიპლომი">მაგისტრის დიპლომი</option>
+                        <option value="დოქტორი დიპლომი">დოქტორის დიპლომი</option>
+                        <option value="ასოცირებული ხარისხი">ასოცირებულის ხარისხი</option>
+                        <option value="სტუდენტი">სტუდენტი</option>
+                        <option value="კოლეჯი (ხარისხის გარეშე)">კოლეჯი (ხარისხის გარეშე)</option>
+                        <option value="სხვა">სხვა</option>
+                    </select>
                 </div>
                 <div id="education_end_date">
-                    <input type="date" id="beginning_input">
+                    <input type="date" onchange="educationDate()" id="beginning_input">
                 </div>
                 <div id="education_description">
                     <h1>აღწერა</h1>
-                    <textarea name="general_info" id="education_textArea" cols="30" rows="10" placeholder="განათლების აღწერა" required=""></textarea>
+                    <textarea name="general_info" onchange="educationDescription()" id="education_textArea" cols="30" rows="10" placeholder="განათლების აღწერა" required=""></textarea>
                 </div>
                 <div id="education_add_more">
-                    <button id="add_more_btn">სხვა სასწავლებელის დამატება</button>
+                    <button id="add_more_btn" onclick="addEducation()">სხვა სასწავლებელის დამატება</button>
                 </div>
                 <div id="education_go_back">
                     <button id="goes_back">უკან</button>
@@ -78,10 +81,12 @@
                     <p id="right_paragraph_2"></p>
                 <div id="right_line_2"></div>
                 <h1 id="right-education">განათლება</h1>
-                <h1 id="education_header">წმ. ანდრიას საპატრიარქოს სასწავლებელი, </h1>
-                <h1 id="education_header_2">სტუდენტი</h1>
-                <p id="education_right_paragraph">2020-09-09</p>
-                <p id="education_about_me">ვსწავლობდი გულმოდგინეთ. მყავდა ფრიადები. რაც შემეძლო — ვქენი. კომპიუტერები მიყვარდა. ვიჯექი ჩემთვის, ვაკაკუნებდი ამ კლავიშებზე. მეუნებოდნენ — დაჯექი, წაიკითხე რამე, რას აკაკუნებ, დრო მოვა და ჩაგიკაკუნებსო. აჰა, მოვიდა დრო და ვერა ვარ დეველოპერი?</p>
+                <div id="inline-div_3">
+                    <h1 id="education_header"></h1>
+                    <h1 id="education_header_2"></h1>
+                </div>
+                <p id="education_right_paragraph">2020-09-23</p>
+                <p id="education_about_me"></p>
                 <div id="round_logo"></div>
             </div>
         </section>
