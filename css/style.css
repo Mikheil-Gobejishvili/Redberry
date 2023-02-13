@@ -1137,7 +1137,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin: 0px;
 }
 
-#right_div #education_header, .education_header, #right_div #education_header_2{
+#right_div #education_header, .education_header, #right_div #education_header_2, .education_header_2{
     font-size: 16px;
     font-weight: 500;
     line-height: 20px;
@@ -1151,7 +1151,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     left: 80px;
 }
 
-#right_div #education_right_paragraph, #right_div #education_header_2, .education_header , #right_div #education_header,#right_div #education_about_me  {
+#right_div #education_right_paragraph, .education_about_me , .education_right_paragraph , #right_div #education_header_2, .education_header_2 , .education_header , #right_div #education_header,#right_div #education_about_me  {
     margin: 0px;
 }
 
@@ -1159,7 +1159,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     width: 81px;
 }
 
-#right_div #education_right_paragraph {
+#right_div #education_right_paragraph, .education_right_paragraph {
     display: none;
     position: absolute;
     height: 19px;
@@ -1173,7 +1173,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     opacity: 0.5;
 }
 
-#right_div #education_about_me {
+#right_div #education_about_me , .education_about_me {
     /* display: none; */
     position: absolute;
     height: 88px;
@@ -1308,4 +1308,36 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     top: 588px;
     width: 90%;
     height: 20px;
+}
+
+#right_experience_header, #right_experience_header_2 {
+    display: inline;
+}
+
+#success {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 167px;
+    width: 410px;
+    left: 1423px;
+    top: 53px;
+    border-radius: 8px;
+    background: #FFFFFF;
+    border: 1px solid #E4E4E4;
+    box-shadow: 0px 4px 28px 0px #00000040;
+    font-family: Helvetica Neue;
+}
+
+#success h1 {
+    height: 86px;
+    width: 364px;
+    left: 30px;
+    top: 39.5px;
+    border-radius: 0px;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 43px;
+    letter-spacing: 0em;
 }
