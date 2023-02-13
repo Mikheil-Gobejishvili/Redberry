@@ -6,33 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <title>CV</title>
+    <script src="script.js"></script>
 </head>
-<body>
+<body onload="CV()">
     <main>
         <section class="resume-section">
+            <div id="private_ellipse" style="background-color:#F9F9F9;">
+                <a href="index.html"><div id="private_less_than"></div></a>
+            </div>
+            <div id="success">
+                <h1>რეზიუმე წარმატებით გაიგზავნა 🎉</h1>
+            </div>
             <div id="resume-div">
                 <div id="right_div">
-                    <div id="right_img"></div>
-                    <h1 id="right_img_name">ᲐᲜᲖᲝᲠ</h1>
-                    <h1 id="right_img_surname">ᲛᲣᲛᲚᲐᲫ</h1>
+                    <img id="right_img"></img>
+                    <h1 id="right_img_name"></h1>
+                    <h1 id="right_img_surname"></h1>
                     <div id="email_logo"></div>
-                    <p id="right_div_email">anzor666@redberry.com</p>
+                    <p id="right_div_email"></p>
                     <div id="phone_logo"></div>
-                    <p id="phone_number">+995 597 63 45 16</p>
+                    <p id="phone_number"></p>
                     <h1 id="right_about_me">ᲩᲔᲛ ᲨᲔᲡᲐᲮᲔᲑ</h1>
-                    <p id="about_me_paragraph">ძალიან მიყვარს დიზაინის კეთება. დილით ადრე რომ 
-                        ავდგები გამამხნევებელი ვარჯიშების მაგიერ დიზაინს ვაკეთებ.</p>
+                    <p id="about_me_paragraph"></p>
                     <div id="right_line"></div>
                     <h1 id="right_experience_title">გამოცდილება</h1>
-                    <h1 id="right_experience_header">React Native Developer,</h1>
-                    <h1 id="right_experience_header_2">Microsoft</h1>
-                    <p id="right_paragraph">2020-09-23 - 2020-09-23</p>
-                    <p id="right_paragraph_2">Experienced Javascript Native Developer with 5 years in the industry. proficient withreact. Used problem-solving aptitude to encahge application performance by 14%.created data visualisation tools and integrated designs. </p>
+                    <div id="inline-div">
+                        <h1 id="right_experience_header"></h1>
+                        <h1 id="right_experience_header_2"></h1>
+                    </div>
+                    <div id="inline-div_2">
+                        <p id="right_paragraph"></p>
+                        <p id="right_paragraph_3"></p>
+                    </div>
+                    <p id="right_paragraph_2"></p>
                     <div id="right_line_2"></div>
-                    <h1 id="right-education">განათლება</h1>
-                    <h1 id="education_header">წმ. ანდრიას საპატრიარქოს სასწავლებელი, </h1>
-                    <h1 id="education_header_2">სტუდენტი</h1>
-                    <p id="education_right_paragraph">2020-09-09</p>
+                    <h1 id="right-education" style="display: block;">განათლება</h1>
+                    <div id="inline-div_3" style="top: 625px">
+                        <h1 id="education_header">წმ. ანდრიას საპატრიარქოს სასწავლებელი, </h1>
+                        <h1 id="education_header_2">სტუდენტი</h1>
+                    </div>
+                    <p id="education_right_paragraph" style="display: block;">2020-09-09</p>
                     <p id="education_about_me">ვსწავლობდი გულმოდგინეთ. მყავდა ფრიადები. რაც შემეძლო — ვქენი. კომპიუტერები მიყვარდა. ვიჯექი ჩემთვის, ვაკაკუნებდი ამ კლავიშებზე. მეუნებოდნენ — დაჯექი, წაიკითხე რამე, რას აკაკუნებ, დრო მოვა და ჩაგიკაკუნებსო. აჰა, მოვიდა დრო და ვერა ვარ დეველოპერი?</p>
                     <div id="round_logo"></div>
                 </div>

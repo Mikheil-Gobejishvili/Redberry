@@ -246,6 +246,10 @@ function Education() {
     phone_number.innerHTML = sessionStorage.getItem("number");
     const Position = document.getElementById("right_experience_header");
     Position.innerHTML = localStorage.getItem("position_input") + ", ";
+    document.getElementById("academy_name").value = localStorage.getItem("academy_name");
+    document.getElementById("universities").value = localStorage.getItem("universities");
+    document.getElementById("beginning_input").value = localStorage.getItem("beginning_input");
+    document.getElementById("education_textArea").value = localStorage.getItem("education_textArea");
     Position.style.display = "inline";
     const Employer = document.getElementById("right_experience_header_2");
     Employer.innerHTML = localStorage.getItem("employer_input");
@@ -268,8 +272,29 @@ function Education() {
     if(recentImageUrl) {
         document.getElementById("right_img").setAttribute("src",recentImageUrl);
     }
-    const count = parseInt(localStorage.getItem("count"));
+    let count = parseInt(sessionStorage.getItem("count"));
+    let count2 = parseInt(sessionStorage.getItem("count2"));
     for(let i = 0; i < count; i++) {
+        if(count2 >= 1){
+            for (let index = 0; index < count2; index++) {
+                if(localStorage.getItem("academy_name" + (index + 1)) != "" && localStorage.getItem("academy_name" + (index + 1)) != null ){
+                    document.getElementById("academy_name" + (index + 1)).value = localStorage.getItem("academy_name" + (index + 1));
+                    academy();
+                }
+                if(localStorage.getItem("select_degree" + (index + 1)) != "" && localStorage.getItem("select_degree" + (index + 1)) != null ){
+                    document.getElementById("select_degree" + (index + 1)).value = localStorage.getItem("select_degree" + (index + 1));
+                    selection();
+                }
+                if(localStorage.getItem("beginning_input" + (index + 1)) != "" && localStorage.getItem("beginning_input" + (index + 1)) != null ){
+                    document.getElementById("beginning_input" + (index + 1)).value = localStorage.getItem("beginning_input" + (index + 1));
+                    educationDate();
+                }
+                if(localStorage.getItem("education_textArea" + (index + 1)) != "" && localStorage.getItem("education_textArea" + (index + 1)) != null){
+                    document.getElementById("education_textArea" + (index + 1)).value = localStorage.getItem("education_textArea" + (index + 1));
+                    educationDescription();
+                }
+            }
+        }
         const right_line = document.createElement("div");
         const right_experience_title = document.createElement("h1");
         const inline_div = document.createElement("div");
@@ -296,6 +321,10 @@ function Education() {
         right_experience_title.style.display = "block";
         right_experience_header.id = "right_experience_header_1_" + (i + 1);
         right_experience_header.innerHTML = sessionStorage.getItem("position_input" + (i + 1)) + ", ";
+        console.log(sessionStorage.getItem("position_input" + (i + 1)) + ", ");
+        if(right_experience_header.innerHTML == "null,"){
+            console.log("s");
+        }
         right_experience_header.className = "right_experience_header";
         right_experience_header.style.display = "inline";
         right_experience_header.style.top = "61px";
@@ -336,9 +365,7 @@ function Education() {
             document.getElementById("right_line_2").style.top = document.getElementById("right_line_2").offsetTop + (208) + 'px';
             document.getElementById("education_header_2").style.top = document.getElementById("right_line_2").offsetTop+ (208) + 'px';
             document.getElementById("education_about_me").style.top = document.getElementById("right_line_2").offsetTop + 61 + 27 + 35 + 'px';
-            document.getElementById("inline-div_3").style.top = document.getElementById("right_line_2").offsetTop + 61 + 'px';;
             document.getElementById("education_right_paragraph").style.top = document.getElementById("right_line_2").offsetTop + 61 + 27 + 'px';
-            console.log(document.getElementById("education_right_paragraph").style.top);
             if(i == 0){
                 right_experience_title.style.top = right_experience_title.offsetTop + (24) + 'px';
             }else{
@@ -350,8 +377,15 @@ function Education() {
                 round_logo.style.top = round_logo.offsetTop + (208) + 'px';
                 right_div.style.height = right_div.offsetHeight + (208) + 'px';
             }
+            // if(document.getElementById("right_experience_header_1_" + (i + 1)) == null){
+            //     count--;
+            // }
         }
-        
+        if(count == 1){
+            document.getElementById("inline-div_3").style.top = document.getElementById("right_line_2").offsetTop + 61 + 'px';;
+        }else{
+            document.getElementById("inline-div_3").style.top = document.getElementById("right_line_2").offsetTop + 61 + 'px';;
+        }
     check_length();
 }
 
@@ -390,7 +424,7 @@ function position() {
             document.getElementById("position_input"+(i + 1)).style.border="1px solid #98E37E";
             document.getElementById("warning-sign"+(i + 1)).style.display = "none";
             sessionStorage.setItem("position_input" + (i + 1),document.getElementById("position_input" + (i + 1)).value);
-            document.getElementById("right_experience_header_1_" + (i + 1)).innerHTML = localStorage.getItem("position_input" + (i + 1)) + ", ";
+            document.getElementById("right_experience_header_1_" + (i + 1)).innerHTML = sessionStorage.getItem("position_input" + (i + 1)) + ", ";
             const experience = document.getElementById("right_experience_title_" + (i + 1));
             experience.style.display = "block";
             Position.innerHTML = document.getElementById("position_input").value + ",";
@@ -442,7 +476,7 @@ function employer() {
             document.getElementById("employer_input" + (i + 1)).style.border="1px solid #98E37E";
             document.getElementById("warning-1-sign" + (i + 1)).style.display = "none";
             sessionStorage.setItem("employer_input" + (i + 1),document.getElementById("employer_input" + (i + 1)).value);
-            document.getElementById("right_experience_header_2_" + (i + 1)).innerHTML = localStorage.getItem("employer_input" + (i + 1));
+            document.getElementById("right_experience_header_2_" + (i + 1)).innerHTML = sessionStorage.getItem("employer_input" + (i + 1));
             const experience = document.getElementById("right_experience_title_" + (i + 1));
             experience.style.display = "block";
             employer.innerHTML = document.getElementById("employer_input" + (i + 1)).value;
@@ -669,8 +703,95 @@ function checkValidation() {
     console.log(bool);
 }
 
+function checkValidation2() {
+    const count = localStorage.getItem("count2");
+    let bool = true;
+    for(let i = 0; i < count; i++){
+        if(document.getElementById("academy_name"+(i + 1)).style.border=="1px solid rgb(239, 80, 80)"){
+            bool = false;
+        }else if(document.getElementById("select_degree" + (i + 1)).style.border=="1px solid rgb(239, 80, 80)"){
+            bool = false;
+        }else if(document.getElementById("beginning_input" + (i + 1)).style.border=="1px solid rgb(239, 80, 80)"){
+            bool = false;
+        }else if(document.getElementById("education_textArea" + (i + 1)).style.border=="1px solid rgb(239, 80, 80)"){
+            bool = false;
+        }else if(document.getElementById("academy_name").value.length < 2){
+            bool = false;
+        }else if(document.getElementById("education_textArea").value.length < 2){
+            bool = false;
+        }else if(document.getElementById("universities").value == "აირჩიეთ ხარისხი"){
+            bool = false;
+        }
+
+        if(document.getElementById("academy_name"+(i + 1)).style.border=="1px solid rgb(152, 227, 126)" || document.getElementById("select_degree" + (i + 1)).style.border=="1px solid rgb(152, 227, 126)" || document.getElementById("beginning_input" + (i + 1)).style.border=="1px solid rgb(152, 227, 126)" || document.getElementById("education_textArea" + (i + 1)).style.border=="1px solid rgb(152, 227, 126)"){
+            console.log(i);
+            if(document.getElementById("academy_name"+(i + 1)).value == ""){
+                document.getElementById("academy_name"+(i + 1)).style.border="1px solid #EF5050";
+                bool = false;
+            }if(document.getElementById("select_degree"+(i + 1)).value == "აირჩიეთ ხარისხი"){
+                document.getElementById("select_degree"+(i + 1)).style.border="1px solid #EF5050";
+                bool = false;
+            }if(document.getElementById("beginning_input"+(i + 1)).value == ""){
+                document.getElementById("beginning_input"+(i + 1)).style.border="1px solid #EF5050";
+                bool = false;
+            }if(document.getElementById("education_textArea"+(i + 1)).value == ""){
+                document.getElementById("education_textArea"+(i + 1)).style.border="1px solid #EF5050";
+                bool = false;
+            }
+        }
+
+        if(document.getElementById("academy_name").style.border=="1px solid rgb(152, 227, 126)" || document.getElementById("select_degree").style.border=="1px solid rgb(152, 227, 126)" || document.getElementById("beginning_input").style.border=="1px solid rgb(152, 227, 126)" || document.getElementById("education_textArea").style.border=="1px solid rgb(152, 227, 126)"){
+            if(document.getElementById("academy_name").value == ""){
+                document.getElementById("academy_name").style.border="1px solid #EF5050";
+                bool = false;
+            }if(document.getElementById("universities").value == "აირჩიეთ ხარისხი"){
+                document.getElementById("universities").style.border="1px solid #EF5050";
+                bool = false;
+            }if(document.getElementById("beginning_input").value == ""){
+                document.getElementById("beginning_input").style.border="1px solid #EF5050";
+                bool = false;
+            }if(document.getElementById("education_textArea").value == ""){
+                document.getElementById("education_textArea").style.border="1px solid #EF5050";
+                bool = false;
+            }
+        }
+    }
+    if(bool == true){
+        window.location.href="/CV.html";
+        localStorage.clear();
+    }
+    console.log(bool);
+}
+
 function academy() {
     const academy_name = document.getElementById("education_header");
+    const count = localStorage.getItem("count2");
+    for(let i = 0; i < count; i++){
+        if(document.getElementById("academy_name"+(i + 1)).value.length >= 2){
+            document.getElementById("validated_img_5_"+(i + 1)).style.display = "block";
+            document.getElementById("academy_name"+(i + 1)).style.border="1px solid #98E37E";
+            document.getElementById("warning-sign_5_"+(i + 1)).style.display = "none";
+            sessionStorage.setItem("academy_name" + (i + 1),document.getElementById("academy_name" + (i + 1)).value);
+            localStorage.setItem("academy_name" + (i + 1),document.getElementById("academy_name" + (i + 1)).value);
+            document.getElementById("education_header" + (i + 1)).innerHTML = localStorage.getItem("academy_name" + (i + 1)) + ", ";
+            const experience = document.getElementById("right-education" + (i + 1));
+            experience.style.display = "block";
+            academy_name.innerHTML = document.getElementById("academy_name").value + ",";
+            academy_name.style.display = "inline";
+        }else{
+            academy_name.style.display = "none";
+            document.getElementById("education_header" + (i + 1)).innerHTML = localStorage.getItem("academy_name" + (i + 1));
+            document.getElementById("validated_img_5_"+(i + 1)).style.display = "none";
+            document.getElementById("warning-sign_5_"+(i + 1)).style.display = "block";
+            document.getElementById("academy_name"+(i + 1)).style.border="1px solid #EF5050";
+            if(document.getElementById("academy_name"+(i + 1)).value == ""){
+                document.getElementById("academy_name"+(i + 1)).style.border="1px solid #BCBCBC";
+                document.getElementById("warning-sign_5_"+(i + 1)).style.display = "none";
+            }else {
+                localStorage.setItem("academy_name" + (i + 1),document.getElementById("academy_name" + (i + 1)).value);
+            }
+        }
+    }
     if(document.getElementById("academy_name").value.length >= 2){
         document.getElementById("validated_img_5").style.display = "block";
         document.getElementById("right-education").style.display = "block";
@@ -695,7 +816,25 @@ function academy() {
 }
 
 function selection(){
-    console.log(document.getElementById("universities").value);
+    const count = localStorage.getItem("count2");
+    for(let i = 0; i < count; i++){
+        if(document.getElementById("select_degree" + (i + 1)).value.length > 2 && document.getElementById("select_degree" + (i + 1)).value != "აირჩიეთ ხარისხი"){
+            document.getElementById("select_degree" + (i + 1)).style.border="1px solid #98E37E";
+            sessionStorage.setItem("select_degree" + (i + 1),document.getElementById("select_degree" + (i + 1)).value);
+            localStorage.setItem("select_degree" + (i + 1),document.getElementById("select_degree" + (i + 1)).value);
+            document.getElementById("education_header_2" + (i + 1)).innerHTML = localStorage.getItem("select_degree" + (i + 1));
+            const experience = document.getElementById("right-education" + (i + 1));
+            experience.style.display = "block";
+        }else{
+            document.getElementById("education_header_2" + (i + 1)).innerHTML = localStorage.getItem("select_degree" + (i + 1));
+            document.getElementById("select_degree"+(i + 1)).style.border="1px solid #EF5050";
+            if(document.getElementById("select_degree"+(i + 1)).value == "აირჩიეთ ხარისხი"){
+                document.getElementById("select_degree"+(i + 1)).style.border="1px solid #BCBCBC";
+            }else {
+                localStorage.setItem("select_degree" + (i + 1),document.getElementById("select_degree" + (i + 1)).value);
+            }
+        }
+    }
     if(document.getElementById("universities").value != "აირჩიეთ ხარისხი"){
         document.getElementById("right-education").style.display = "block";
         document.getElementById("universities").style.border = "1px solid #98E37E";
@@ -714,6 +853,25 @@ function selection(){
 
 function educationDate() {
     const beginning = document.getElementById("education_right_paragraph");
+    const count = localStorage.getItem("count2");
+    for(let i = 0; i < count; i++){
+        if(document.getElementById("beginning_input" + (i + 1)).value.length > 2){
+            document.getElementById("beginning_input" + (i + 1)).style.border="1px solid #98E37E";
+            sessionStorage.setItem("beginning_input" + (i + 1),document.getElementById("beginning_input" + (i + 1)).value);
+            localStorage.setItem("beginning_input" + (i + 1),document.getElementById("beginning_input" + (i + 1)).value);
+            document.getElementById("education_right_paragraph" + (i + 1)).innerHTML = localStorage.getItem("beginning_input" + (i + 1));
+            const experience = document.getElementById("education_right_paragraph" + (i + 1));
+            experience.style.display = "block";
+        }else{
+            document.getElementById("education_right_paragraph" + (i + 1)).innerHTML = localStorage.getItem("beginning_input" + (i + 1));
+            document.getElementById("beginning_input"+(i + 1)).style.border="1px solid #EF5050";
+            if(document.getElementById("beginning_input"+(i + 1)).value == ""){
+                document.getElementById("beginning_input"+(i + 1)).style.border="1px solid #BCBCBC";
+            }else {
+                localStorage.setItem("beginning_input" + (i + 1),document.getElementById("beginning_input" + (i + 1)).value);
+            }
+        }
+    }
     if(document.getElementById("beginning_input").value){
         beginning.innerHTML = document.getElementById("beginning_input").value;
         document.getElementById("beginning_input").style.border="1px solid #98E37E";
@@ -731,6 +889,25 @@ function educationDate() {
 
 function educationDescription() {
     const position = document.getElementById("education_about_me");
+    const count = localStorage.getItem("count2");
+    for(let i = 0; i < count; i++){
+        if(document.getElementById("education_textArea" + (i + 1)).value.length > 2){
+            document.getElementById("education_textArea" + (i + 1)).style.border="1px solid #98E37E";
+            sessionStorage.setItem("education_textArea" + (i + 1),document.getElementById("education_textArea" + (i + 1)).value);
+            localStorage.setItem("education_textArea" + (i + 1),document.getElementById("education_textArea" + (i + 1)).value);
+            document.getElementById("education_about_me" + (i + 1)).innerHTML = localStorage.getItem("education_textArea" + (i + 1));
+            const experience = document.getElementById("education_about_me" + (i + 1));
+            experience.style.display = "block";
+        }else{
+            document.getElementById("education_about_me" + (i + 1)).innerHTML = localStorage.getItem("education_textArea" + (i + 1));
+            document.getElementById("education_textArea"+(i + 1)).style.border="1px solid #EF5050";
+            if(document.getElementById("education_textArea"+(i + 1)).value == ""){
+                document.getElementById("education_textArea"+(i + 1)).style.border="1px solid #BCBCBC";
+            }else {
+                localStorage.setItem("education_textArea" + (i + 1),document.getElementById("education_textArea" + (i + 1)).value);
+            }
+        }
+    }
     if(document.getElementById("education_textArea").value.length > 0){
         document.getElementById("education_textArea").style.border="1px solid #98E37E";
         position.innerHTML = document.getElementById("education_textArea").value;
@@ -764,6 +941,38 @@ function loadEducation (){
         const btn_1 = document.getElementById("goes_back");
         const btn_2 = document.getElementById("after_btn");
 
+        const right_line_2 = document.createElement("div");
+        const right_header = document.createElement("h1");
+        const right_inline = document.createElement("div");
+        const education_header = document.createElement("h1");
+        const education_header_2 = document.createElement("h1");
+        const education_right_paragraph = document.createElement("p");
+        const education_about_me = document.createElement("p");
+
+        right_line_2.id = "right_line_2";
+        right_line_2.style.left = "0px";
+        right_line_2.style.top = "0px";
+        right_header.id = "right-education"+ (i + 1);
+        right_header.innerHTML = "განათლება";
+        right_header.className = "right-education";
+        right_header.style.left = "0px";
+        right_inline.id = "inline-div_3_" + (i + 1);
+        right_inline.className = "inline-div_3";
+        right_inline.style.left = "0px";
+        education_header.id = "education_header"+ (i + 1);
+        education_header.className = "education_header";
+        education_header.style.left = "0px";
+        education_header.style.display = "inline";
+        education_header_2.id = "education_header_2"+ (i + 1);
+        education_header_2.className = "education_header_2";
+        education_header_2.style.left = "0px";
+        education_header_2.style.display = "inline";
+        education_right_paragraph.id = "education_right_paragraph" + (i + 1);
+        education_right_paragraph.className = "education_right_paragraph";
+        education_right_paragraph.style.left = "0px";
+        education_about_me.id = "education_about_me" + (i + 1);
+        education_about_me.className = "education_about_me";
+        education_about_me.style.left = "0px";
         right_line.id = "right_line_2";
         right_line.style.left = "0px";
         right_line.style.top = "0px";
@@ -794,7 +1003,6 @@ function loadEducation (){
         academy_caption.style.left = "0px";
         academy_caption.innerHTML = "მინიმუმ 2 სიმბოლო";
         degree.id = "degree_header" + (i + 1);
-        degree.onchange = selection;
         degree.className = "degree_header";
         degree.innerHTML = "ხარისხი";
         degree.style.left = "0px";
@@ -821,12 +1029,13 @@ function loadEducation (){
         line.style.left = "0px";
         line.style.top = "553px";
 
-        var array = ["აირჩიეთ ხარისხი","საშუალო სკოლის დიპლომი","ზოგადსაგანმანათლებლო დიპლომი","აკალავრი დიპლომი","მაგისტრის დიპლომი","დოქტორის დიპლომი","ასოცირებულის ხარისხი","სტუდენტი","კოლეჯი (ხარისხის გარეშე)","სხვა"];
+        var array = ["აირჩიეთ ხარისხი","საშუალო სკოლის დიპლომი","ზოგადსაგანმანათლებლო დიპლომი","ბაკალავრი დიპლომი","მაგისტრის დიპლომი","დოქტორის დიპლომი","ასოცირებულის ხარისხი","სტუდენტი","კოლეჯი (ხარისხის გარეშე)","სხვა"];
 
         var selectList = document.createElement("select");
-        selectList.id = "select_degree";
+        selectList.id = "select_degree" + (i + 1);
         selectList.className = "select_degree";
         selectList.style.left = "0px";
+        selectList.onchange = selection;
         selectList.style.top = "218px";
         document.getElementById("bottom_line_1").appendChild(selectList);
 
@@ -847,9 +1056,16 @@ function loadEducation (){
         document.getElementById("bottom_line_1").appendChild(warning_sign);
         document.getElementById("bottom_line_1").appendChild(validated);
         document.getElementById("right_line_2").appendChild(right_line);
-        btn.style.top = btn.offsetTop + (551)  + 'px';
-        btn_1.style.top = btn_1.offsetTop + (551)  + 'px';
-        btn_2.style.top = btn_2.offsetTop + (551)  + 'px';
+        document.getElementById("right_line_2").appendChild(right_line_2);
+        document.getElementById("right_line_2").appendChild(right_header);
+        document.getElementById("right_line_2").appendChild(right_inline);
+        document.getElementById("inline-div_3_" + (i + 1)).appendChild(education_header);
+        document.getElementById("inline-div_3_" + (i + 1)).appendChild(education_header_2);
+        document.getElementById("right_line_2").appendChild(education_right_paragraph);
+        document.getElementById("right_line_2").appendChild(education_about_me);
+        btn.style.top = btn.offsetTop + (551) + 'px';
+        btn_1.style.top = btn_1.offsetTop + (551) + 'px';
+        btn_2.style.top = btn_2.offsetTop + (551) + 'px';
         academy_header.style.top = academy_header.offsetTop + (551 * (i)) + 'px'; 
         academy_input.style.top = academy_input.offsetTop + (551 * (i)) + 'px'; 
         academy_caption.style.top = academy_caption.offsetTop + (551 * (i)) + 'px'; 
@@ -861,7 +1077,12 @@ function loadEducation (){
         line.style.top = line.offsetTop + (551 * (i)) + 'px';
         warning_sign.style.top = warning_sign.offsetTop + (551 * (i)) + 78 + 'px';
         validated.style.top = validated.offsetTop + (551 * (i)) + 78 + 'px';
-        right_line.style.top = right_line.offsetTop + (208 * (i +  1) ) + 'px';
+        right_line.style.top = right_line.offsetTop + (208 * (i + 1) ) + 'px';
+        right_line_2.style.top = right_line_2.offsetTop + (208 * (i + 1) ) + 'px';
+        right_header.style.top = right_header.offsetTop + ((208) * (i + 1)) + 24 + 'px';
+        right_inline.style.top = right_header.offsetTop + ((208) * (i + 1)) + 24 + 37 + 'px';
+        education_right_paragraph.style.top = right_header.offsetTop + ((208) * (i + 1)) + 24 + 37 + 27 + 'px';
+        education_about_me.style.top = right_header.offsetTop + ((208) * (i + 1)) + 24 + 37 + 27 + 35 + 'px';
         if((i) == 0){
             warning_sign.style.top = warning_sign.offsetTop + 78 + 'px';
             validated.style.top = validated.offsetTop + 83 + 'px';
@@ -869,7 +1090,195 @@ function loadEducation (){
             warning_sign.style.top = warning_sign.offsetTop + (551 * (i)) + 78 + 'px';
             validated.style.top = validated.offsetTop + (551 * (i)) + 83 + 'px';
         }
+        const round_logo = document.getElementById("round_logo");
+        const right_div = document.getElementById("right_div");
+        round_logo.style.top = round_logo.offsetTop + (208) + 'px';
+        right_div.style.height = right_div.offsetHeight + (208) + 'px';
     }
+}
+
+function CV() {
+    const name = document.getElementById("right_img_name");
+    name.innerHTML = sessionStorage.getItem("name");
+    const surname = document.getElementById("right_img_surname");
+    surname.innerHTML = sessionStorage.getItem("surname");
+    const about_me = document.getElementById("about_me_paragraph");
+    about_me.innerHTML = sessionStorage.getItem("about_me");
+    document.getElementById("right_experience_title").style.display = "block";
+    const email = document.getElementById("right_div_email");
+    email.innerHTML = sessionStorage.getItem("email");
+    const phone_number = document.getElementById("phone_number");
+    phone_number.innerHTML = sessionStorage.getItem("number");
+    const Position = document.getElementById("right_experience_header");
+    Position.innerHTML = sessionStorage.getItem("position_input") + ", ";
+    Position.style.display = "inline";
+    const Employer = document.getElementById("right_experience_header_2");
+    Employer.innerHTML = sessionStorage.getItem("employer_input");
+    Employer.style.display = "inline";
+    const Beginning = document.getElementById("right_paragraph");
+    Beginning.innerHTML = sessionStorage.getItem("beginning_input") + " - ";
+    Beginning.style.display = "inline";
+    const End = document.getElementById("right_paragraph_3");
+    End.innerHTML = sessionStorage.getItem("end_input");
+    End.style.display = "inline";
+    const textarea = document.getElementById("right_paragraph_2");
+    textarea.innerHTML = sessionStorage.getItem("description_textArea");
+    textarea.style.display = "block";
+    document.getElementById("education_header").innerHTML = sessionStorage.getItem("academy_name") + ", ";
+    document.getElementById("education_header_2").innerHTML = sessionStorage.getItem("universities");
+    document.getElementById("education_right_paragraph").innerHTML = sessionStorage.getItem("beginning_input");
+    document.getElementById("education_about_me").innerHTML = sessionStorage.getItem("education_textArea");
+    document.getElementById('phone_logo').style.display = "block";
+    document.getElementById('email_logo').style.display = "block";
+    document.getElementById('right_about_me').style.display = "block";
+    const right_img = document.getElementById("right_img");
+    right_img.style.backgroundImage = sessionStorage.getItem("url1");
+    const recentImageUrl = sessionStorage.getItem("url1");
+    if(recentImageUrl) {
+        document.getElementById("right_img").setAttribute("src",recentImageUrl);
+    }
+    let count = parseInt(sessionStorage.getItem("count"));
+    let count2 = parseInt(sessionStorage.getItem("count2"));
+    console.log(count2);
+    for(let j = 0; j < count; j++){
+        const right_line_2 = document.createElement("div");
+        const right_header = document.createElement("h1");
+        const right_inline = document.createElement("div");
+        const education_header = document.createElement("h1");
+        const education_header_2 = document.createElement("h1");
+        const education_right_paragraph = document.createElement("p");
+        const education_about_me = document.createElement("p");
+        right_line_2.id = "right_line_2";
+        right_line_2.style.left = "0px";
+        right_line_2.style.top = "0px";
+        right_header.id = "right-education"+ (j + 1);
+        right_header.style.display = "block";
+        right_header.innerHTML = "განათლება";
+        right_header.className = "right-education";
+        right_header.style.left = "0px";
+        right_inline.id = "inline-div_3_" + (j + 1);
+        right_inline.className = "inline-div_3";
+        right_inline.style.left = "0px";
+        education_header.id = "education_header"+ (j + 1);
+        education_header.innerHTML = sessionStorage.getItem("academy_name" + (j + 1)) + ", ";
+        education_header.className = "education_header";
+        education_header.style.left = "0px";
+        education_header.style.display = "inline";
+        education_header_2.id = "education_header_2" + (j + 1);
+        education_header_2.innerHTML = sessionStorage.getItem("select_degree" + (j + 1));
+        education_header_2.className = "education_header_2";
+        education_header_2.style.left = "0px";
+        education_header_2.style.display = "inline";
+        education_right_paragraph.id = "education_right_paragraph" + (j + 1);
+        education_right_paragraph.style.display = "block";
+        education_right_paragraph.innerHTML = sessionStorage.getItem("beginning_input" + (j + 1));
+        education_right_paragraph.className = "education_right_paragraph";
+        education_right_paragraph.style.left = "0px";
+        education_about_me.id = "education_about_me" + (j + 1);
+        education_about_me.innerHTML = sessionStorage.getItem("description_textArea" + (j + 1));
+        education_about_me.className = "education_about_me";
+        education_about_me.style.left = "0px";
+        document.getElementById("right_line_2").appendChild(right_line_2);
+        document.getElementById("right_line_2").appendChild(right_header);
+        document.getElementById("right_line_2").appendChild(right_inline);
+        document.getElementById("inline-div_3_" + (j + 1)).appendChild(education_header);
+        document.getElementById("inline-div_3_" + (j + 1)).appendChild(education_header_2);
+        document.getElementById("right_line_2").appendChild(education_right_paragraph);
+        document.getElementById("right_line_2").appendChild(education_about_me);
+        right_header.style.top = right_line_2.offsetTop + (235 * (j + 1)) + 24 + 'px';
+        right_inline.style.top = right_header.offsetTop + 37 + 'px';
+        right_line_2.style.top = right_line_2.offsetTop + (235 * (j + 1) ) + 'px';
+        education_right_paragraph.style.top = right_header.offsetTop + 37 + 27 + 'px';
+        education_about_me.style.top = right_header.offsetTop + 37 + 27 + 35 + 'px';
+        const round_logo = document.getElementById("round_logo");
+        const resume_div = document.getElementById("resume-div");
+        round_logo.style.top = round_logo.offsetTop + (208) + 'px';
+        resume_div.style.height = resume_div.offsetHeight + (208) + 'px';
+    }
+    for(let i = 0; i < count; i++){
+        const right_line = document.createElement("div");
+        const right_experience_title = document.createElement("h1");
+        const inline_div = document.createElement("div");
+        const inline_div_2 = document.createElement("div");
+        const right_experience_header = document.createElement("h1");
+        const right_experience_header_2 = document.createElement("h1");
+        const right_paragraph = document.createElement("p");
+        const right_paragraph_3 = document.createElement("p");
+        const right_paragraph_2 = document.createElement("p");
+        
+        right_line.id = "right_line_1";
+        right_line.style.top = "549px";
+        inline_div.id = "inline_div_"+(i + 1);
+        inline_div.className = "inline-div-3";
+        inline_div.style.top = "610px";
+        inline_div_2.id = "inline-div"+(i + 1);
+        inline_div_2.className = "inline-div_4";
+        inline_div_2.style.top = "637px";
+        right_experience_title.id = "right_experience_title_" + (i + 1);
+        right_experience_title.className = "right_experience_title";
+        right_experience_title.innerHTML = "გამოცდილება";
+        right_experience_title.style.left = "0px";
+        right_experience_title.style.top = "0px";
+        right_experience_title.style.display = "block";
+        right_experience_header.id = "right_experience_header_1_" + (i + 1);
+        right_experience_header.innerHTML = sessionStorage.getItem("position_input" + (i + 1)) + ", ";
+        right_experience_header.className = "right_experience_header";
+        right_experience_header.style.display = "inline";
+        right_experience_header.style.top = "61px";
+        right_experience_header.style.left = "0px";
+        right_paragraph.id = "right_paragraph" + (i + 1);
+        right_paragraph.innerHTML = sessionStorage.getItem("beginning_input" + (i + 1)) + " - ";
+        right_paragraph.className = "right_paragraph";
+        right_paragraph.style.display = "inline";
+        right_paragraph_3.id = "right_paragraph_3_" + (i + 1);
+        right_paragraph_3.className = "right_paragraph_3";
+        right_paragraph_3.innerHTML = sessionStorage.getItem("end_input" + (i + 1));
+        right_paragraph_3.style.display = "inline";
+        right_paragraph_2.id = "right_paragraph_2_" + (i + 1);
+        right_paragraph_2.innerHTML = sessionStorage.getItem("description_textArea" + (i + 1));
+        right_paragraph_2.className = "right_paragraph_2";
+        right_paragraph_2.style.top = "672px";
+        right_experience_header_2.id = "right_experience_header_2_"+ (i + 1);
+        right_experience_header_2.innerHTML = sessionStorage.getItem("employer_input" + (i + 1));
+        right_experience_header_2.className = "right_experience_header_2";
+        right_experience_header_2.style.display = "inline";
+        right_experience_header_2.style.top = "61px";
+        right_experience_header_2.style.left = "40px";
+            document.getElementById("right_div").appendChild(right_line);
+            document.getElementById("right_div").appendChild(inline_div);
+            document.getElementById("right_div").appendChild(inline_div_2);
+            document.getElementById("inline-div"+(i + 1)).appendChild(right_paragraph);
+            document.getElementById("inline-div"+(i + 1)).appendChild(right_paragraph_3);
+            document.getElementById("right_div").appendChild(right_paragraph_2);
+            document.getElementById("right_line_1").appendChild(right_experience_title);
+            document.getElementById("inline_div_"+(i + 1)).appendChild(right_experience_header);
+            document.getElementById("inline_div_"+(i + 1)).appendChild(right_experience_header_2);
+            right_line.style.top = right_line.offsetTop + ((208) * (i)) + 'px';
+            inline_div.style.top = inline_div.offsetTop + ((208) * (i)) + 'px';
+            inline_div_2.style.top = inline_div_2.offsetTop + ((208) * (i)) + 'px';
+            right_paragraph_2.style.top = right_paragraph_2.offsetTop + ((208) * (i)) + 'px';
+            document.getElementById("right-education").style.top = document.getElementById("right_line_2").offsetTop + 208 + 24 + 'px';
+            document.getElementById("right_line_2").style.top = document.getElementById("right_line_2").offsetTop + (208) + 'px';
+            document.getElementById("education_header_2").style.top = document.getElementById("right_line_2").offsetTop+ (208) + 'px';
+            document.getElementById("education_about_me").style.top = document.getElementById("right_line_2").offsetTop + 61 + 27 + 35 + 'px';
+            document.getElementById("inline-div_3").style.top = document.getElementById("right_line_2").offsetTop + 61 + 'px';;
+            document.getElementById("education_right_paragraph").style.top = document.getElementById("right_line_2").offsetTop + 61 + 27 + 'px';
+            if(i == 0){
+                right_experience_title.style.top = right_experience_title.offsetTop + (24) + 'px';
+            }else{
+                right_experience_title.style.top = right_experience_title.offsetTop + ((208) * (i)) + 24 + 'px';
+            }
+            if(count >= 2){
+                const round_logo = document.getElementById("round_logo");
+                const right_div = document.getElementById("right_div");
+                const resume_div = document.getElementById("resume-div");
+                round_logo.style.top = round_logo.offsetTop + (208) + 'px';
+                right_div.style.height = right_div.offsetHeight + (208) + 'px';
+                resume_div.style.height = resume_div.offsetHeight + (208) + 'px';
+                right_div.style.height = right_div.offsetHeight + (129) + 'px';
+            }
+        }
+    check_length();
 }
 
 function addEducation() {
@@ -887,14 +1296,6 @@ function addEducation() {
     const btn_1 = document.getElementById("goes_back");
     const btn_2 = document.getElementById("after_btn");  
 
-    // <h1 id="right-education">განათლება</h1>
-    //     <div id="inline-div_3">
-    //     <h1 id="education_header"></h1>
-    //     <h1 id="education_header_2"></h1>
-    // </div>
-    // <p id="education_right_paragraph">2020-09-23</p>
-    // <p id="education_about_me"></p>
-
     const right_line = document.createElement("div");
     const right_header = document.createElement("h1");
     const right_inline = document.createElement("div");
@@ -908,6 +1309,7 @@ function addEducation() {
     if(localStorage.getItem("count2")){
         count += parseInt(localStorage.getItem("count2"));
         localStorage.setItem("count2",count);
+        sessionStorage.setItem("count2",count);
     }else{
         localStorage.setItem("count2",count);
     }
@@ -924,7 +1326,17 @@ function addEducation() {
     education_header.id = "education_header"+count;
     education_header.className = "education_header";
     education_header.style.left = "0px";
-    education_header.innerHTML = "some"
+    education_header.style.display = "inline";
+    education_header_2.id = "education_header_2"+count;
+    education_header_2.className = "education_header_2";
+    education_header_2.style.left = "0px";
+    education_header_2.style.display = "inline";
+    education_right_paragraph.id = "education_right_paragraph" + count;
+    education_right_paragraph.className = "education_right_paragraph";
+    education_right_paragraph.style.left = "0px";
+    education_about_me.id = "education_about_me" + count;
+    education_about_me.className = "education_about_me";
+    education_about_me.style.left = "0px";
     academy_header.id = "education_left_paragraph" + count;
     academy_header.className = "education_left_paragraph";
     academy_header.style.top = "37px";
@@ -942,7 +1354,6 @@ function addEducation() {
     academy_caption.style.left = "0px";
     academy_caption.innerHTML = "მინიმუმ 2 სიმბოლო";
     degree.id = "degree_header" + count;
-    degree.onchange = selection;
     degree.className = "degree_header";
     degree.innerHTML = "ხარისხი";
     degree.style.left = "0px";
@@ -978,12 +1389,13 @@ function addEducation() {
     validated.style.left = "0px";
     validated.style.top = "81px";
     validated.style.left = "760px";
-    var array = ["აირჩიეთ ხარისხი","საშუალო სკოლის დიპლომი","ზოგადსაგანმანათლებლო დიპლომი","აკალავრი დიპლომი","მაგისტრის დიპლომი","დოქტორის დიპლომი","ასოცირებულის ხარისხი","სტუდენტი","კოლეჯი (ხარისხის გარეშე)","სხვა"];
+    var array = ["აირჩიეთ ხარისხი","საშუალო სკოლის დიპლომი","ზოგადსაგანმანათლებლო დიპლომი","ბაკალავრი დიპლომი","მაგისტრის დიპლომი","დოქტორის დიპლომი","ასოცირებულის ხარისხი","სტუდენტი","კოლეჯი (ხარისხის გარეშე)","სხვა"];
 
     var selectList = document.createElement("select");
-    selectList.id = "select_degree";
+    selectList.id = "select_degree" + count;
     selectList.className = "select_degree";
     selectList.style.left = "0px";
+    selectList.onchange = selection;
     selectList.style.top = "218px";
     document.getElementById("bottom_line_1").appendChild(selectList);
 
@@ -1007,6 +1419,9 @@ function addEducation() {
     document.getElementById("right_line_2").appendChild(right_header);
     document.getElementById("right_line_2").appendChild(right_inline);
     document.getElementById("inline-div_3_" + count).appendChild(education_header);
+    document.getElementById("inline-div_3_" + count).appendChild(education_header_2);
+    document.getElementById("right_line_2").appendChild(education_right_paragraph);
+    document.getElementById("right_line_2").appendChild(education_about_me);
     btn.style.top = btn.offsetTop + (551)  + 'px';
     btn_1.style.top = btn_1.offsetTop + (551)  + 'px';
     btn_2.style.top = btn_2.offsetTop + (551)  + 'px';
@@ -1024,6 +1439,8 @@ function addEducation() {
     right_line.style.top = right_line.offsetTop + (208 * (count) ) + 'px';
     right_header.style.top = right_header.offsetTop + ((208) * count) + 24 + 'px';
     right_inline.style.top = right_header.offsetTop + ((208) * count) + 24 + 37 + 'px';
+    education_right_paragraph.style.top = right_header.offsetTop + ((208) * count) + 24 + 37 + 27 + 'px';
+    education_about_me.style.top = right_header.offsetTop + ((208) * count) + 24 + 37 + 27 + 35 + 'px';
     if((count - 1) == 0){
         warning_sign.style.top = warning_sign.offsetTop + 78 + 'px';
         validated.style.top = validated.offsetTop + 83 + 'px';
@@ -1289,6 +1706,7 @@ function add_experience() {
     if(localStorage.getItem("count")){
         count += parseInt(localStorage.getItem("count"));
         localStorage.setItem("count",count);
+        sessionStorage.setItem("count",count);
     }else{
         localStorage.setItem("count",count);
     }
