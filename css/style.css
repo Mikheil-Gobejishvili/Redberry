@@ -10,7 +10,7 @@ body {
   }
 
 #background-img,#logo_2,#logo_1,#right_img,#email_logo,#phone_logo,#private_less_than,#round_logo,
-#warning-sign_3,#warning-sign_4,#warning-sign_1,#warning-sign_2,#warning-sign_5,#warning-sign_6,#warning-sign_7, #warning-sign_8, .warning-sign{
+#warning-sign_3,#warning-sign_4,#warning-sign_1,#warning-sign_2,#warning-sign_5,#warning-sign_6,#warning-sign_7, #warning-sign_8, .warning-sign, .warning-sign_5{
     background-position: right;
     background-size: cover;
     background-repeat: no-repeat;
@@ -702,7 +702,7 @@ input[type="file"] {
 }
 
 #beginning_date #beginning_input,#beginning_date .beginning_input, #end_date #end_input,#end_date .end_input,
- .end_date #end_input, .end_date .end_input , #education_end_date #beginning_input, .beginning_date #beginning_input, .beginning_date .beginning_input{
+ .end_date #end_input, .end_date .end_input , #education_end_date #beginning_input, .beginning_date #beginning_input, .beginning_date .beginning_input, .beginning_input{
     position: absolute;
     z-index: 2;
     height: 48px;
@@ -911,7 +911,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 }
 
-#academy #education_left_paragraph {
+#academy #education_left_paragraph, .education_left_paragraph {
     position: absolute;
     height: 21px;
     width: 798px;
@@ -924,7 +924,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin: 0px;
 }
 
-#academy #academy_name {
+#academy #academy_name, .academy_name {
     position: absolute;
     height: 48px;
     width: 782px;
@@ -938,7 +938,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     border: 1px solid #BCBCBC;
 }
 
-#education_caption {
+#education_caption, .education_caption {
     position: absolute;
     height: 21px;
     width: 798px;
@@ -960,7 +960,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     padding: 8px 24px 8px 24px;
 }
 
-#degree #degree_header {
+#degree #degree_header, .degree_header {
     position: absolute;
     height: 21px;
     width: 371px;
@@ -973,7 +973,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin: 0px;
 }
 
-#degree select {
+#degree select, .select_degree {
     position: absolute;
     height: 48px;
     width: 371px;
@@ -997,7 +997,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     border-radius: 0px;
 }
 
-#education_description {
+#education_description, .description{
     position: absolute;
     height: 224px;
     width: 846px;
@@ -1006,7 +1006,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     border-radius: 0px;
 }
 
-#education_description h1 {
+#education_description h1, .description{
     position: absolute;
     height: 21px;
     width: 798px;
@@ -1019,7 +1019,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin: 0px;
 }
 
-#education_textArea {
+#education_textArea, .education_textArea {
     position: absolute;
     height: 179px;
     width: 780px;
@@ -1035,7 +1035,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     padding-top: 13px;
 }
 
-#bottom_line_1 {
+#bottom_line_1, .bottom_line_1 {
     position: absolute;
     height: 0px;
     width: 798px;
@@ -1123,7 +1123,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     left: 0px;
 }
 
-#right_div #right-education {
+#right_div #right-education, .right-education {
+    display: none;
     position: absolute;
     height: 22px;
     width: 115px;
@@ -1136,7 +1137,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin: 0px;
 }
 
-#right_div #education_header, #right_div #education_header_2{
+#right_div #education_header, .education_header, #right_div #education_header_2{
     font-size: 16px;
     font-weight: 500;
     line-height: 20px;
@@ -1145,23 +1146,21 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     border-radius: 0px;
 }
 
-#right_div #education_header {
-    position: absolute;
+#right_div #education_header, .education_header {
     width: 349px;
     left: 80px;
 }
 
-#right_div #education_right_paragraph, #right_div #education_header_2, #right_div #education_header,#right_div #education_about_me  {
+#right_div #education_right_paragraph, #right_div #education_header_2, .education_header , #right_div #education_header,#right_div #education_about_me  {
     margin: 0px;
 }
 
 #right_div #education_header_2 {
-    position: absolute;
     width: 81px;
-    left: 425px;
 }
 
 #right_div #education_right_paragraph {
+    display: none;
     position: absolute;
     height: 19px;
     width: 84px;
@@ -1169,13 +1168,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     top: 652px;
     border-radius: 0px;
     font-size: 16px;
-    font-style: italic;
     font-weight: 400;
     line-height: 19px;
     opacity: 0.5;
 }
 
 #right_div #education_about_me {
+    /* display: none; */
     position: absolute;
     height: 88px;
     width: 662px;
@@ -1198,7 +1197,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background-image: url("/images/validated.png");
 }
 
-#validated_img_3, #validated_img_4, #validated_img_5, #validated_img_6, .validated-sign{
+#validated_img_3, #validated_img_4, #validated_img_5, .validated_img_5 , #validated_img_6, .validated-sign{
     display: none;
     z-index: 3;
     position: absolute;
@@ -1226,7 +1225,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     left: 415px;
 }
 
-#warning-sign_3, #warning-sign_4,#warning-sign_5,#warning-sign_6, #warning-sign_8, .warning-sign{
+#warning-sign_3, #warning-sign_4,#warning-sign_5,#warning-sign_6, #warning-sign_8, .warning-sign, .warning-sign_5{
     position: absolute;
     display: none;
     background-size: contain;
@@ -1297,4 +1296,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     width: 183px;
     left: 80px;
     top: 429px;
+}
+
+#education_header, #education_header_2 {
+    display: inline;
+}
+
+#inline-div_3, .inline-div_3 {
+    position: absolute;
+    left: 80px;
+    top: 588px;
+    width: 90%;
+    height: 20px;
 }
